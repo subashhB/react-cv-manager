@@ -9,32 +9,76 @@ import {
 } from "react-icons/pi";
 import { RxDashboard } from "react-icons/rx";
 import logo from "../../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-    const sidebarComponents = [
-        { logo: <RxDashboard size={28} />, caption: "Dashboard" },
-        { logo: <BsPersonFill size={28} />, caption: "Applicants" },
-        { logo: <ImPencil2 size={20} />, caption: "Interview" },
-        { logo: <PiChalkboardTeacherFill size={28} />, caption: "Interviewer" },
-        { logo: <AiOutlineFolderOpen size={28} />, caption: "Template" },
-        { logo: <PiExam size={28} />, caption: "Assessment Test" },
-        { logo: <PiEnvelopeSimple size={28} />, caption: "Dashboard" },
-    ];
+    const sidebarComponents = SidebarComponents();
     return (
         <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-white shadow-lg">
             <img src={logo} className="mt-2 ms-2" width={50} alt="logo" />
             {sidebarComponents.map((item, i) => (
-                <SidebarIcon key={i} icon={item.logo} caption={item.caption} />
+                <SidebarIcon
+                    key={i}
+                    icon={item.logo}
+                    caption={item.caption}
+                    link={item.link}
+                />
             ))}
+            <hr className="shadow-lg mt-5" />
         </div>
     );
 };
 
-const SidebarIcon = ({ icon, caption }) => (
-    <div className="sidebar-icon group">
-        {icon}{" "}
-        <span className="sidebar-caption group-hover:scale-100">{caption}</span>
-    </div>
+const SidebarComponents = () => {
+    const sidebarComponents = [
+        {
+            logo: <RxDashboard size={28} />,
+            caption: "Dashboard",
+            link: "/",
+        },
+        {
+            logo: <BsPersonFill size={28} />,
+            caption: "Applicants",
+            link: "/applicants",
+        },
+        {
+            logo: <ImPencil2 size={20} />,
+            caption: "Interview",
+            link: "/interview",
+        },
+        {
+            logo: <PiChalkboardTeacherFill size={28} />,
+            caption: "Interviewer",
+            link: "/interviewer",
+        },
+        {
+            logo: <AiOutlineFolderOpen size={28} />,
+            caption: "Template",
+            link: "/template",
+        },
+        {
+            logo: <PiExam size={28} />,
+            caption: "Assessment Test",
+            link: "/assessmentTest",
+        },
+        {
+            logo: <PiEnvelopeSimple size={28} />,
+            caption: "Offer Letter",
+            link: "/offerLetter",
+        },
+    ];
+    return sidebarComponents;
+};
+
+const SidebarIcon = ({ icon, caption, link }) => (
+    <Link to={link}>
+        <div className="sidebar-icon group">
+            {icon}{" "}
+            <span className="sidebar-caption group-hover:scale-100">
+                {caption}
+            </span>
+        </div>
+    </Link>
 );
 
 export default Sidebar;
