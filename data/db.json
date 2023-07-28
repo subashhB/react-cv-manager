@@ -203,15 +203,6 @@
       "ApplicationExpiryDate": "2023-08-03",
       "JobApplicationStatusId": 1,
       "id": 4
-    },
-    {
-      "JobPositionId": "5",
-      "NumberOfOpenings": 3,
-      "PublishedOn": "2023-07-28T06:44:43.876Z",
-      "ApplicationFromDate": "2023-08-01",
-      "ApplicationExpiryDate": "2023-08-04",
-      "JobApplicationStatusId": 1,
-      "id": 5
     }
   ],
   "Applicants": [],

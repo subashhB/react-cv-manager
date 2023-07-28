@@ -14,6 +14,10 @@ const JobPostsList = () => {
         { id: 7, title: "Actions" },
     ];
 
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:3001/JobPostings/${id}`);
+    };
+
     useEffect(() => {
         axios
             .get("http://localhost:3001/JobPostings?_expand=JobPosition")
@@ -50,7 +54,14 @@ const JobPostsList = () => {
                         </td>
                         <td className="flex">
                             <AiFillEdit size={20} />
-                            <AiFillDelete className="ms-2" size={20} />
+                            <div className="ms-5 cursor-pointer">
+                                <AiFillDelete
+                                    size={20}
+                                    onClick={() => {
+                                        handleDelete(jobPosting.id);
+                                    }}
+                                />
+                            </div>
                         </td>
                     </tr>
                 ))}
