@@ -6,6 +6,7 @@ import {
     PiChalkboardTeacherFill,
     PiEnvelopeSimple,
     PiExam,
+    PiSuitcaseSimpleLight,
 } from "react-icons/pi";
 import { RxDashboard } from "react-icons/rx";
 import logo from "../../../assets/logo.png";
@@ -40,6 +41,11 @@ const SidebarComponents = () => {
             logo: <BsPersonFill size={28} />,
             caption: "Applicants",
             link: "/applicants",
+        },
+        {
+            logo: <PiSuitcaseSimpleLight size={28} />,
+            caption: "Jobs",
+            link: "/jobs",
         },
         {
             logo: <ImPencil2 size={20} />,
