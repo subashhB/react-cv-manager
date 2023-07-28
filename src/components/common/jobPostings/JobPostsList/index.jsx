@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 
 const JobPostsList = () => {
     const [jobPostings, setJobPostings] = useState([]);
@@ -10,6 +11,7 @@ const JobPostsList = () => {
         { id: 4, title: "Published on" },
         { id: 5, title: "Application form Date" },
         { id: 6, title: "Application Expiry Date" },
+        { id: 7, title: "Actions" },
     ];
 
     useEffect(() => {
@@ -45,6 +47,10 @@ const JobPostsList = () => {
                         </td>
                         <td className="tw-td">
                             {jobPosting.ApplicationExpiryDate}
+                        </td>
+                        <td className="flex">
+                            <AiFillEdit size={20} />
+                            <AiFillDelete className="ms-2" size={20} />
                         </td>
                     </tr>
                 ))}

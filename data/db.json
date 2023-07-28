@@ -1,172 +1,229 @@
 {
-    "JobLevels": [
-        { "id": 1, "Name": "Associate" },
-        { "id": 2, "Name": "Mid" },
-        { "id": 3, "Name": "Senior" }
-    ],
-    "JobDomains": [
-        { "id": 1, "Name": "DotNet" },
-        { "id": 2, "Name": "React" },
-        { "id": 3, "Name": "QA" },
-        { "id": 4, "Name": "Support" },
-        { "id": 5, "Name": "HR" }
-    ],
-    "JobPositions": [
-        {
-            "id": 1,
-            "Name": "Associate DotNet Engineer",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 1,
-            "JobLevelId": 1
-        },
-        {
-            "id": 2,
-            "Name": "Mid DotNet Engineer",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 1,
-            "JobLevelId": 2
-        },
-        {
-            "id": 3,
-            "Name": "Senior DotNet Engineer",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 1,
-            "JobLevelId": 3
-        },
-        {
-            "id": 4,
-            "Name": "Associate React Engineer",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 2,
-            "JobLevelId": 1
-        },
-        {
-            "id": 5,
-            "Name": "Mid React Engineer",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 2,
-            "JobLevelId": 2
-        },
-        {
-            "id": 6,
-            "Name": "Senior React Engineer",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 2,
-            "JobLevelId": 3
-        },
-        {
-            "id": 7,
-            "Name": "Associate QA",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 3,
-            "JobLevelId": 1
-        },
-        {
-            "id": 8,
-            "Name": "Mid QA",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 3,
-            "JobLevelId": 2
-        },
-        {
-            "id": 9,
-            "Name": "Senior QA",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 3,
-            "JobLevelId": 3
-        },
-        {
-            "id": 10,
-            "Name": "Associate Support",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 4,
-            "JobLevelId": 1
-        },
-        {
-            "id": 11,
-            "Name": "Mid Support",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 4,
-            "JobLevelId": 2
-        },
-        {
-            "id": 12,
-            "Name": "Senior Support",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 4,
-            "JobLevelId": 3
-        },
-        {
-            "id": 13,
-            "Name": "Associate HR",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 5,
-            "JobLevelId": 1
-        },
-        {
-            "id": 14,
-            "Name": "Mid HR",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 5,
-            "JobLevelId": 2
-        },
-        {
-            "id": 15,
-            "Name": "Senior HR",
-            "JobDescriptionUrl": "example@description.com",
-            "IsActive": true,
-            "JobDomainId": 5,
-            "JobLevelId": 3
-        }
-    ],
-    "JobApplicatonStatusId": [
-        { "id": 1, "Name": "Acitve" },
-        { "id": 2, "Name": "Inactive" }
-    ],
-    "JobPostings": [
-        {
-            "id": 1,
-            "JobPositionId": 1,
-            "NumberOfOpenings": 3,
-            "PublishedOn": "",
-            "ApplicationFromDate": "",
-            "ApplicatoinExpiryDate": "",
-            "JobApplicationStatusId": 1
-        },
-        {
-            "id": 2,
-            "JobPositionId": 2,
-            "NumberOfOpenings": 3,
-            "PublishedOn": "",
-            "ApplicationFromDate": "",
-            "ApplicationExpiryDate": "",
-            "JobApplicationStatusId": 1
-        }
-    ],
-    "Applicants": [],
-    "Candidates": [],
-    "JobApplications": [],
-    "Interviews": [],
-    "InterviewDetails": [],
-    "Interviewers": [],
-    "InterviewersJobDomains": [],
-    "JobApplicationInterviewers": [],
-    "JobApplicationStatusChangeLogs": [],
-    "Assesments": [],
-    "OfferLetter": [],
-    "LetterTemplates": []
+  "JobLevels": [
+    {
+      "id": 1,
+      "Name": "Associate"
+    },
+    {
+      "id": 2,
+      "Name": "Mid"
+    },
+    {
+      "id": 3,
+      "Name": "Senior"
+    }
+  ],
+  "JobDomains": [
+    {
+      "id": 1,
+      "Name": "DotNet"
+    },
+    {
+      "id": 2,
+      "Name": "React"
+    },
+    {
+      "id": 3,
+      "Name": "QA"
+    },
+    {
+      "id": 4,
+      "Name": "Support"
+    },
+    {
+      "id": 5,
+      "Name": "HR"
+    }
+  ],
+  "JobPositions": [
+    {
+      "id": 1,
+      "Name": "Associate DotNet Engineer",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 1,
+      "JobLevelId": 1
+    },
+    {
+      "id": 2,
+      "Name": "Mid DotNet Engineer",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 1,
+      "JobLevelId": 2
+    },
+    {
+      "id": 3,
+      "Name": "Senior DotNet Engineer",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 1,
+      "JobLevelId": 3
+    },
+    {
+      "id": 4,
+      "Name": "Associate React Engineer",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 2,
+      "JobLevelId": 1
+    },
+    {
+      "id": 5,
+      "Name": "Mid React Engineer",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 2,
+      "JobLevelId": 2
+    },
+    {
+      "id": 6,
+      "Name": "Senior React Engineer",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 2,
+      "JobLevelId": 3
+    },
+    {
+      "id": 7,
+      "Name": "Associate QA",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 3,
+      "JobLevelId": 1
+    },
+    {
+      "id": 8,
+      "Name": "Mid QA",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 3,
+      "JobLevelId": 2
+    },
+    {
+      "id": 9,
+      "Name": "Senior QA",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 3,
+      "JobLevelId": 3
+    },
+    {
+      "id": 10,
+      "Name": "Associate Support",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 4,
+      "JobLevelId": 1
+    },
+    {
+      "id": 11,
+      "Name": "Mid Support",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 4,
+      "JobLevelId": 2
+    },
+    {
+      "id": 12,
+      "Name": "Senior Support",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 4,
+      "JobLevelId": 3
+    },
+    {
+      "id": 13,
+      "Name": "Associate HR",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 5,
+      "JobLevelId": 1
+    },
+    {
+      "id": 14,
+      "Name": "Mid HR",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 5,
+      "JobLevelId": 2
+    },
+    {
+      "id": 15,
+      "Name": "Senior HR",
+      "JobDescriptionUrl": "example@description.com",
+      "IsActive": true,
+      "JobDomainId": 5,
+      "JobLevelId": 3
+    }
+  ],
+  "JobApplicatonStatusId": [
+    {
+      "id": 1,
+      "Name": "Acitve"
+    },
+    {
+      "id": 2,
+      "Name": "Inactive"
+    }
+  ],
+  "JobPostings": [
+    {
+      "id": 1,
+      "JobPositionId": 1,
+      "NumberOfOpenings": 3,
+      "PublishedOn": "",
+      "ApplicationFromDate": "",
+      "ApplicationExpiryDate": "",
+      "JobApplicationStatusId": 1
+    },
+    {
+      "id": 2,
+      "JobPositionId": 2,
+      "NumberOfOpenings": 3,
+      "PublishedOn": "",
+      "ApplicationFromDate": "",
+      "ApplicationExpiryDate": "",
+      "JobApplicationStatusId": 1
+    },
+    {
+      "JobPositionId": 1,
+      "NumberOfOpenings": "10",
+      "PublishedOn": "2023-07-28T06:31:18.152Z",
+      "ApplicationFromDate": "2023-08-01",
+      "ApplicationExpiryDate": "2023-08-05",
+      "JobApplicationStatusId": 1,
+      "id": 3
+    },
+    {
+      "JobPositionId": "8",
+      "NumberOfOpenings": "10",
+      "PublishedOn": "2023-07-28T06:40:59.943Z",
+      "ApplicationFromDate": "2023-07-29",
+      "ApplicationExpiryDate": "2023-08-03",
+      "JobApplicationStatusId": 1,
+      "id": 4
+    },
+    {
+      "JobPositionId": "5",
+      "NumberOfOpenings": 3,
+      "PublishedOn": "2023-07-28T06:44:43.876Z",
+      "ApplicationFromDate": "2023-08-01",
+      "ApplicationExpiryDate": "2023-08-04",
+      "JobApplicationStatusId": 1,
+      "id": 5
+    }
+  ],
+  "Applicants": [],
+  "Candidates": [],
+  "JobApplications": [],
+  "Interviews": [],
+  "InterviewDetails": [],
+  "Interviewers": [],
+  "InterviewersJobDomains": [],
+  "JobApplicationInterviewers": [],
+  "JobApplicationStatusChangeLogs": [],
+  "Assesments": [],
+  "OfferLetter": [],
+  "LetterTemplates": []
 }
