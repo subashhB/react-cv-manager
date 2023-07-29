@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import JobPostsList from "../../components/common/jobPostings/JobPostsList";
-import JobPostingForm from "../../components/common/jobPostings/JobPostingForm";
+import JobPostsList from "../../components/jobPostings/JobPostsList";
+import JobPostingForm from "../../components/jobPostings/JobPostingForm";
 import axios from "axios";
 
 const JobPostingPage = () => {

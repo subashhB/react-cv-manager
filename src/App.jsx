@@ -8,6 +8,8 @@ import InterviewerPage from "./pages/Interviewer";
 import OfferLetterPage from "./pages/OfferLetter";
 import TemplatePage from "./pages/Template";
 import JobPostingPage from "./pages/JobPostings";
+import ApplicantsListPage from "./pages/Applicants/ApplicantsListPage";
+import ApplicantsDetailsPage from "./pages/Applicants/ApplicantDetailsPage";
 
 function App() {
     return (
@@ -15,7 +17,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<RootLayout />}>
                     <Route index element={<Dashboard />} />
-                    <Route path="/applicants" element={<ApplicantsPage />} />
+                    <Route path="/applicants" element={<ApplicantsPage />}>
+                        <Route index element={<ApplicantsListPage />} />
+                        <Route path=":id" element={<ApplicantsDetailsPage />} />
+                    </Route>
                     <Route path="/jobs" element={<JobPostingPage />} />
                     <Route path="/interview" element={<InterviewPage />} />
                     <Route path="/interviewer" element={<InterviewerPage />} />
@@ -24,6 +29,7 @@ function App() {
                         path="/assessmentTest"
                         element={<AssessmentTestPage />}
                     />
+
                     <Route path="/offerLetter" element={<OfferLetterPage />} />
                 </Route>
             </Routes>
