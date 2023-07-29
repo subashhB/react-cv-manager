@@ -1,1 +1,1 @@
-export const SET_APPLICATNS = "SET_APPLICANTS";
+export const SET_APPLICANTS = "SET_APPLICANTS";
