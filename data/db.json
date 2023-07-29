@@ -169,40 +169,22 @@
   ],
   "JobPostings": [
     {
-      "id": 1,
-      "JobPositionId": 1,
-      "NumberOfOpenings": 3,
-      "PublishedOn": "",
-      "ApplicationFromDate": "",
-      "ApplicationExpiryDate": "",
-      "JobApplicationStatusId": 1
-    },
-    {
-      "id": 2,
-      "JobPositionId": 2,
-      "NumberOfOpenings": 3,
-      "PublishedOn": "",
-      "ApplicationFromDate": "",
-      "ApplicationExpiryDate": "",
-      "JobApplicationStatusId": 1
-    },
-    {
-      "JobPositionId": 1,
-      "NumberOfOpenings": "10",
-      "PublishedOn": "2023-07-28T06:31:18.152Z",
-      "ApplicationFromDate": "2023-08-01",
-      "ApplicationExpiryDate": "2023-08-05",
+      "JobPositionId": 7,
+      "NumberOfOpenings": 8,
+      "PublishedOn": "2023-07-29T06:40:10.471Z",
+      "ApplicationFromDate": "2023-07-31",
+      "ApplicationExpiryDate": "2023-08-04",
       "JobApplicationStatusId": 1,
-      "id": 3
+      "id": 1
     },
     {
-      "JobPositionId": "8",
-      "NumberOfOpenings": "10",
-      "PublishedOn": "2023-07-28T06:40:59.943Z",
-      "ApplicationFromDate": "2023-07-29",
-      "ApplicationExpiryDate": "2023-08-03",
+      "JobPositionId": 14,
+      "NumberOfOpenings": 9,
+      "PublishedOn": "2023-07-29T06:41:44.824Z",
+      "ApplicationFromDate": "2023-08-02",
+      "ApplicationExpiryDate": "2023-08-04",
       "JobApplicationStatusId": 1,
-      "id": 4
+      "id": 2
     }
   ],
   "Applicants": [],

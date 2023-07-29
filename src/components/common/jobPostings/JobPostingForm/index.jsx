@@ -1,41 +1,67 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const JobPostingForm = () => {
+const JobPostingForm = ({
+    setJobPostList,
+    jobToUpdate,
+    setJobToUpdate,
+    handleEdit,
+}) => {
     const initialState = {
         JobPositionId: 1,
-        NumberOfOpenings: 0,
-        PublishedOn: new Date(),
+        NumberOfOpenings: "",
+        PublishedOn: new Date().toISOString(),
         ApplicationFromDate: "",
         ApplicationExpiryDate: "",
         JobApplicationStatusId: 1,
     };
     const [jobPositions, setJobPositions] = useState([]);
-    const [jobPosting, setJobPositing] = useState(initialState);
+    const [jobPost, setJobPost] = useState(initialState);
 
     useEffect(() => {
+        if (jobToUpdate) {
+            setJobPost(jobToUpdate);
+        }
         axios
             .get("http://localhost:3001/JobPositions")
-            .then((response) => setJobPositions(response.data))
+            .then((response) => {
+                setJobPositions(response.data);
+            })
             .catch((erorr) => console.error(erorr));
-    }, []);
-    console.log(jobPosting);
+    }, [jobToUpdate]);
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios
-            .post("http://localhost:3001/JobPostings", jobPosting)
-            .then(setJobPositing(initialState));
+        const selectedJobPosition = jobPositions.find(
+            (job) => job.id === jobPost.JobPositionId
+        );
+        if (jobToUpdate) {
+            handleEdit(jobPost, selectedJobPosition);
+            setJobPost(initialState);
+        } else {
+            axios
+                .post("http://localhost:3001/JobPostings", jobPost)
+                .then((response) => {
+                    setJobPost(initialState);
+                    setJobPostList((prev) => [
+                        ...prev,
+                        {
+                            ...response.data,
+                            JobPosition: selectedJobPosition,
+                        },
+                    ]);
+                });
+        }
     };
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <select
-                    value={jobPosting.JobPositionId}
+                    value={jobPost.JobPositionId}
                     name="JobPositionId"
                     onChange={(e) =>
-                        setJobPositing({
-                            ...jobPosting,
-                            JobPositionId: e.target.value,
+                        setJobPost({
+                            ...jobPost,
+                            JobPositionId: parseInt(e.target.value),
                         })
                     }
                     required
@@ -47,12 +73,13 @@ const JobPostingForm = () => {
                     ))}
                 </select>
                 <input
-                    type="text"
-                    value={jobPosting.NumberOfOpenings}
+                    min={0}
+                    type="number"
+                    value={jobPost.NumberOfOpenings}
                     onChange={(e) => {
-                        setJobPositing({
-                            ...jobPosting,
-                            NumberOfOpenings: parseInt(e.target.value),
+                        setJobPost({
+                            ...jobPost,
+                            NumberOfOpenings: e.target.valueAsNumber,
                         });
                     }}
                     placeholder="Number of Openings"
@@ -60,10 +87,10 @@ const JobPostingForm = () => {
                 />
                 <input
                     type="date"
-                    value={jobPosting.ApplicationFromDate}
+                    value={jobPost.ApplicationFromDate}
                     onChange={(e) =>
-                        setJobPositing({
-                            ...jobPosting,
+                        setJobPost({
+                            ...jobPost,
                             ApplicationFromDate: e.target.value,
                         })
                     }
@@ -71,16 +98,18 @@ const JobPostingForm = () => {
                 />
                 <input
                     type="date"
-                    value={jobPosting.ApplicatoinExpiryDate}
+                    value={jobPost.ApplicationExpiryDate}
                     onChange={(e) =>
-                        setJobPositing({
-                            ...jobPosting,
+                        setJobPost({
+                            ...jobPost,
                             ApplicationExpiryDate: e.target.value,
                         })
                     }
                     required
                 />
-                <button type="submit">Post a Job</button>
+                <button type="submit">
+                    {jobToUpdate ? "Edit the Job" : "Post a Job"}
+                </button>
             </form>
         </div>
     );
