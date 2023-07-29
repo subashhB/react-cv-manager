@@ -1,0 +1,1 @@
+export const SET_APPLICATNS = "SET_APPLICANTS";
