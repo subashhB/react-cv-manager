@@ -5,14 +5,12 @@ import Navbar from "../components/common/Navbar";
 
 const RootLayout = () => {
     return (
-        <div className="flex">
+        <div className="flex bg-zinc-100 w-full h-screen">
             <Sidebar />
 
             <div className="ms-16">
                 <Navbar />
-                <div className="m-2">
-                    <Outlet />
-                </div>
+                <Outlet />
             </div>
         </div>
     );

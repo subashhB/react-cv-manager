@@ -5,7 +5,7 @@ import { ApplicantsContextProvider } from "./context/ApplicantsProvider";
 const ApplicantsPage = () => {
     return (
         <ApplicantsContextProvider>
-            <div>
+            <div className="pages">
                 ApplicantsPage
                 <Outlet />
             </div>

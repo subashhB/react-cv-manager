@@ -13,6 +13,6 @@
         transition-all duration-100 scale-0 origin-left;
     }
     .pages {
-        @apply bg-zinc-100;
+        @apply bg-white rounded-lg shadow-md p-5 ms-16 mt-2 w-full max-w-[1300px];
     }
 }
