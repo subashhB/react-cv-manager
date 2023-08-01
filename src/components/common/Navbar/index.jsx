@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <div className=" flex justify-center w-screen ">
             <div className="mx-auto ml-28 my-1 min-w-[1200px] rounded-md bg-white px-5 py-3 shadow-lg">
-                <div className="flex w-full ms-auto">
+                <div className="flex w-full ms-auto justify-end">
                     <div className="relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-3xl bg-white text-gray-900 transition-all duration-300 ease-linear hover:bg-secondary">
                         <AiOutlineBell size={22} />
                     </div>

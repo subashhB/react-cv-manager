@@ -23,7 +23,7 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
     }, [id, jobDomains]);
     console.log(domains);
     return (
-        <div className="ms-10  text-gray-700">
+        <div className="ms-10 mb-20 text-gray-700">
             {applicantDetails ? (
                 <>
                     <div className="flex justify-between item-center mb-8 mt-5">
@@ -156,7 +156,7 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                                 }{" "}
                                 Months
                             </p>
-                            <p className="ms-2 mb-1">
+                            <p className="ms-2 mb-2">
                                 <span className="font-bold">
                                     Company Name:{" "}
                                 </span>
@@ -167,6 +167,32 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                                 }{" "}
                             </p>
                         </div>
+                        <div className="border-y border-gray-600 mt-3">
+                            <h2 className="text-xl ms-4 my-3 font-bold">
+                                Expected Salary:{" "}
+                                {applicantDetails.ExpectedSalary}
+                            </h2>
+                        </div>
+                        {applicantDetails.IsBlackListed && (
+                            <div className="pt-4">
+                                <h3 className="underline font-bold text-lg mb-2">
+                                    Reason for Black Listing.
+                                </h3>
+                                <p className="mb-1">
+                                    {applicantDetails.BlacklistedReason}
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                    <div className=" fixed flex justify-center p-5 -ms-24 mb-5 gap-7 bottom-0 w-full">
+                        {!applicantDetails.IsShortListed && (
+                            <button>Short List Candidate</button>
+                        )}
+                        {!applicantDetails.IsBlackListed && (
+                            <button className="ms-4">
+                                Black List Candidate
+                            </button>
+                        )}
                     </div>
                 </>
             ) : (
