@@ -15,4 +15,11 @@
     .pages {
         @apply bg-white rounded-lg shadow-md p-5 ms-16 mt-2 w-full max-w-[1300px];
     }
+
+    .btn {
+        @apply py-3 px-5 bg-secondary border-blue-700 shadow-sm hover:border-white hover:shadow-inner hover:text-white hover:bg-blue-700 bg-none border rounded-full font-semibold transition ease-in duration-300;
+    }
+    .btn-danger {
+        @apply py-3 px-5 bg-secondary border-red-700 shadow-sm hover:border-white hover:shadow-inner hover:text-white hover:bg-red-700 bg-none border rounded-full font-semibold transition ease-in duration-300;
+    }
 }

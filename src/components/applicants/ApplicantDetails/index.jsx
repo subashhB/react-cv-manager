@@ -22,6 +22,32 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
         }
     }, [id, jobDomains]);
     console.log(domains);
+    const handleShortListCandidate = (id) => {
+        const shortListedCandidate = {
+            ...applicantDetails,
+            IsShortlisted: true,
+            IsBlacklisted: false,
+        };
+        axios
+            .patch(
+                `http://localhost:3001/Applicants/${id}`,
+                shortListedCandidate
+            )
+            .then((response) => setApplicantsDetails(response.data));
+    };
+    const handleBlackListCandidate = (id) => {
+        const blackListedCandidate = {
+            ...applicantDetails,
+            IsBlacklisted: true,
+            IsShortlisted: false,
+        };
+        axios
+            .patch(
+                `http://localhost:3001/Applicants/${id}`,
+                blackListedCandidate
+            )
+            .then((response) => setApplicantsDetails(response.data));
+    };
     return (
         <div className="ms-10 mb-20 text-gray-700">
             {applicantDetails ? (
@@ -185,11 +211,27 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                         )}
                     </div>
                     <div className=" fixed flex justify-center p-5 -ms-24 mb-5 gap-7 bottom-0 w-full">
-                        {!applicantDetails.IsShortListed && (
-                            <button>Short List Candidate</button>
+                        {!applicantDetails.IsShortlisted && (
+                            <button
+                                className="btn"
+                                onClick={() =>
+                                    handleShortListCandidate(
+                                        applicantDetails.id
+                                    )
+                                }
+                            >
+                                Short List Candidate
+                            </button>
                         )}
-                        {!applicantDetails.IsBlackListed && (
-                            <button className="ms-4">
+                        {!applicantDetails.IsBlacklisted && (
+                            <button
+                                className="ms-4 btn-danger"
+                                onClick={() =>
+                                    handleBlackListCandidate(
+                                        applicantDetails.id
+                                    )
+                                }
+                            >
                                 Black List Candidate
                             </button>
                         )}
