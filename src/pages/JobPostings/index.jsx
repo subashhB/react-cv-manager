@@ -49,7 +49,7 @@ const JobPostingPage = () => {
     }, []);
     console.log("jobToUpdate", jobToUpdate);
     return (
-        <div>
+        <div className="pages">
             <JobPostingForm
                 setJobPostList={setJobPostList}
                 jobToUpdate={jobToUpdate}

@@ -1,8 +1,17 @@
+import {
+    Box,
+    Button,
+    Modal,
+    TextareaAutosize,
+    Typography,
+} from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const ApplicantsDetails = ({ id, jobDomains }) => {
+    const [open, setOpen] = useState(false);
     const [applicantDetails, setApplicantsDetails] = useState(null);
+    const [remarks, setRemarks] = useState("");
     const [domains, setDomains] = useState([]);
     useEffect(() => {
         console.log("Id", id);
@@ -27,6 +36,7 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
             ...applicantDetails,
             IsShortlisted: true,
             IsBlacklisted: false,
+            BlacklistedReason: "",
         };
         axios
             .patch(
@@ -36,18 +46,30 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
             .then((response) => setApplicantsDetails(response.data));
     };
     const handleBlackListCandidate = (id) => {
+        handleClose();
         const blackListedCandidate = {
             ...applicantDetails,
             IsBlacklisted: true,
             IsShortlisted: false,
+            BlacklistedReason: remarks,
         };
         axios
             .patch(
                 `http://localhost:3001/Applicants/${id}`,
                 blackListedCandidate
             )
-            .then((response) => setApplicantsDetails(response.data));
+            .then((response) => {
+                setApplicantsDetails(response.data);
+                setRemarks(false);
+            });
     };
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+    console.log("Remarks: ", remarks);
     return (
         <div className="ms-10 mb-20 text-gray-700">
             {applicantDetails ? (
@@ -199,13 +221,14 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                                 {applicantDetails.ExpectedSalary}
                             </h2>
                         </div>
-                        {applicantDetails.IsBlackListed && (
+                        {applicantDetails.IsBlacklisted && (
                             <div className="pt-4">
                                 <h3 className="underline font-bold text-lg mb-2">
                                     Reason for Black Listing.
                                 </h3>
                                 <p className="mb-1">
-                                    {applicantDetails.BlacklistedReason}
+                                    {applicantDetails.BlacklistedReason ||
+                                        "N/A"}
                                 </p>
                             </div>
                         )}
@@ -220,21 +243,61 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                                     )
                                 }
                             >
-                                Short List Candidate
+                                Short List Applicant
                             </button>
                         )}
                         {!applicantDetails.IsBlacklisted && (
                             <button
                                 className="ms-4 btn-danger"
-                                onClick={() =>
-                                    handleBlackListCandidate(
-                                        applicantDetails.id
-                                    )
-                                }
+                                onClick={() => handleOpen()}
                             >
-                                Black List Candidate
+                                Black List Applicant
                             </button>
                         )}
+                        <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="modal-modal-title"
+                        >
+                            <Box className=" absolute top-1/3 left-[35%] w-[500px] h-[300px] shadow-lg p-16 bg-secondary">
+                                <Typography
+                                    id="modal-modal-title"
+                                    variant="h6"
+                                    component="h2"
+                                >
+                                    Reason for Black Listing Applicant
+                                </Typography>
+                                <TextareaAutosize
+                                    className="w-[350px] my-2 rounded-lg"
+                                    minRows={3}
+                                    placeholder="Eg. Skills not Sufficient...."
+                                    onChange={(e) => {
+                                        setRemarks(e.target.value);
+                                    }}
+                                />
+                                <Button
+                                    className="mt-3"
+                                    variant="outlined"
+                                    sx={{
+                                        marginInlineStart: "60px",
+                                        color: "red",
+                                        borderColor: "red",
+                                        ":hover": {
+                                            border: "white",
+                                            color: "white",
+                                            backgroundColor: "red",
+                                        },
+                                    }}
+                                    onClick={() => {
+                                        handleBlackListCandidate(
+                                            applicantDetails.id
+                                        );
+                                    }}
+                                >
+                                    Black List Applicant
+                                </Button>
+                            </Box>
+                        </Modal>
                     </div>
                 </>
             ) : (

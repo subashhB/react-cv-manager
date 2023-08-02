@@ -176,15 +176,6 @@
       "ApplicationExpiryDate": "2023-08-04",
       "JobApplicationStatusId": 1,
       "id": 1
-    },
-    {
-      "JobPositionId": 14,
-      "NumberOfOpenings": 9,
-      "PublishedOn": "2023-07-29T06:41:44.824Z",
-      "ApplicationFromDate": "2023-08-02",
-      "ApplicationExpiryDate": "2023-08-04",
-      "JobApplicationStatusId": 1,
-      "id": 2
     }
   ],
   "Applicants": [
@@ -205,8 +196,8 @@
       "CVUrl": "https://cv.com/rambahadurthapa_cb.pdf",
       "ProfilePictureUrl": "https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg",
       "IsBlacklisted": true,
-      "BlacklistedReason": "",
-      "IsShortlisted": true,
+      "BlacklistedReason": "Skills are not Sufficient",
+      "IsShortlisted": false,
       "ExperienceInMonthsWithCompanyName": "36, SB Tech Pvt. Ltd",
       "RegisteredOn": "2023-07-29",
       "ExpectedSalary": 40000,
