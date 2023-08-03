@@ -45,7 +45,12 @@ const ApplicantsList = () => {
                                         applicant.MiddleName
                                             ? applicant.MiddleName
                                             : "\u00A0"
-                                    } ${applicant.LastName}`}
+                                    } ${applicant.LastName} `}
+                                    {applicant.IsShortlisted && (
+                                        <span className="text-sm italic text-gray-500">
+                                            (Shortlisted)
+                                        </span>
+                                    )}
                                 </Link>
                             </td>
                             <td>{applicant.PrimaryEmail}</td>

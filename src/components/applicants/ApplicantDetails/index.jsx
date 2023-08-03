@@ -82,6 +82,18 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                                     <span>{applicantDetails.MiddleName} </span>
                                 )}
                                 {applicantDetails.LastName}
+                                {applicantDetails.IsBlacklisted && (
+                                    <span className="text-sm text-gray-500 italic">
+                                        {" "}
+                                        (Blacklisted)
+                                    </span>
+                                )}
+                                {applicantDetails.IsShortlisted && (
+                                    <span className="text-sm text-gray-500 italic">
+                                        {" "}
+                                        (Shortlisted)
+                                    </span>
+                                )}
                             </h2>
                             <p className="text-gray-600">
                                 Date of Birth: {applicantDetails.DOB}
