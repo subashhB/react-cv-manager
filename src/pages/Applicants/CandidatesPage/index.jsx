@@ -1,7 +1,12 @@
 import React from "react";
+import CanididatesList from "../../../components/applicants/CandidatesList";
 
 const CandidatesPage = () => {
-    return <div>CandidatePage</div>;
+    return (
+        <div>
+            <CanididatesList />
+        </div>
+    );
 };
 
 export default CandidatesPage;

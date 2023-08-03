@@ -20,7 +20,7 @@ const BlackList = () => {
         { id: 2, title: "Name" },
         { id: 3, title: "Email" },
         { id: 4, title: "Phone No." },
-        { id: 5, title: "Referred By" },
+        { id: 5, title: "Remarks" },
     ];
     const blacklist = applicants.filter((applicant) => applicant.IsBlacklisted);
     return (
@@ -48,7 +48,7 @@ const BlackList = () => {
                             </td>
                             <td>{applicant.PrimaryEmail}</td>
                             <td>{applicant.PrimaryPhoneNumber}</td>
-                            <td>{applicant.ReferredBy}</td>
+                            <td>{applicant.BlacklistedReason}</td>
                         </tr>
                     ))}
                 </tbody>
