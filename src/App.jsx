@@ -10,6 +10,7 @@ import TemplatePage from "./pages/Template";
 import JobPostingPage from "./pages/JobPostings";
 import ApplicantsListPage from "./pages/Applicants/ApplicantsListPage";
 import ApplicantsDetailsPage from "./pages/Applicants/ApplicantDetailsPage";
+import BlackListPage from "./pages/Applicants/BlackLIstPage";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route index element={<Dashboard />} />
                     <Route path="/applicants" element={<ApplicantsPage />}>
                         <Route index element={<ApplicantsListPage />} />
+                        <Route path="blacklist" element={<BlackListPage />} />
                         <Route path=":id" element={<ApplicantsDetailsPage />} />
                     </Route>
                     <Route path="/jobs" element={<JobPostingPage />} />
