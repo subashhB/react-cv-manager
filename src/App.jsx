@@ -10,7 +10,7 @@ import TemplatePage from "./pages/Template";
 import JobPostingPage from "./pages/JobPostings";
 import ApplicantsListPage from "./pages/Applicants/ApplicantsListPage";
 import ApplicantsDetailsPage from "./pages/Applicants/ApplicantDetailsPage";
-import BlackListPage from "./pages/Applicants/BlackLIstPage";
+import BlackListPage from "./pages/Applicants/BlackListPage";
 
 function App() {
     return (
@@ -31,7 +31,6 @@ function App() {
                         path="/assessmentTest"
                         element={<AssessmentTestPage />}
                     />
-
                     <Route path="/offerLetter" element={<OfferLetterPage />} />
                 </Route>
             </Routes>

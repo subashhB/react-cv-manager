@@ -4,7 +4,7 @@ import axios from "axios";
 import * as ActionTypes from "../../../pages/Applicants/context/ActionTypes";
 import { Link } from "react-router-dom";
 
-const ApplicantsList = () => {
+const BlackList = () => {
     const { applicants, dispatch } = useApplicantsContext();
     useEffect(() => {
         axios.get("http://localhost:3001/Applicants").then((response) => {
@@ -22,9 +22,7 @@ const ApplicantsList = () => {
         { id: 4, title: "Phone No." },
         { id: 5, title: "Referred By" },
     ];
-    const applicantList = applicants.filter(
-        (applicant) => !applicant.IsBlacklisted
-    );
+    const blacklist = applicants.filter((applicant) => applicant.IsBlacklisted);
     return (
         <div>
             <table>
@@ -36,7 +34,7 @@ const ApplicantsList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {applicantList?.map((applicant, i) => (
+                    {blacklist?.map((applicant, i) => (
                         <tr key={applicant.id}>
                             <td>{i + 1}</td>
                             <td>
@@ -59,4 +57,4 @@ const ApplicantsList = () => {
     );
 };
 
-export default ApplicantsList;
+export default BlackList;
