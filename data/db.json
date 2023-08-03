@@ -261,7 +261,14 @@
       ]
     }
   ],
-  "Candidates": [],
+  "Candidates": [
+    {
+      "ApplicantId": 2,
+      "CandidateStatus": "",
+      "Remarks": "",
+      "id": 1
+    }
+  ],
   "JobApplications": [],
   "Interviews": [],
   "InterviewDetails": [],

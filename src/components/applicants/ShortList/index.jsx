@@ -25,7 +25,15 @@ const ShortList = () => {
         { id: 5, title: "Referred By" },
     ];
 
-    const handleAddCandidate = () => {};
+    const handleAddCandidate = (applicant) => {
+        console.log(applicant);
+        const candidate = {
+            ApplicantId: applicant.id,
+            CandidateStatus: "",
+            Remarks: "",
+        };
+        axios.post("http://localhost:3001/Candidates", candidate);
+    };
 
     return (
         <div>
@@ -56,7 +64,7 @@ const ShortList = () => {
                             <td>{applicant.ReferredBy}</td>
                             <td
                                 onClick={() => {
-                                    handleAddCandidate();
+                                    handleAddCandidate(applicant);
                                 }}
                             >
                                 <Button>Add Candidate</Button>
