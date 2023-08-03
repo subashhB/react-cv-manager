@@ -29,7 +29,7 @@ const BlackList = () => {
                 <thead>
                     <tr>
                         {tableHead.map((title) => (
-                            <td key={title.id}>{title.title}</td>
+                            <th key={title.id}>{title.title}</th>
                         ))}
                     </tr>
                 </thead>

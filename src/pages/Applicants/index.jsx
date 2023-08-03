@@ -20,9 +20,25 @@ const ApplicantsPage = () => {
                     />
                     <Tab
                         value="2"
-                        label="Black LIst"
+                        label="Short List"
                         onClick={() => {
                             setValue("2");
+                            navigate("/applicants/shortlist");
+                        }}
+                    />
+                    <Tab
+                        value="3"
+                        label="Candidates"
+                        onClick={() => {
+                            setValue("3");
+                            navigate("/applicants/candidates");
+                        }}
+                    />
+                    <Tab
+                        value="4"
+                        label="Black List"
+                        onClick={() => {
+                            setValue("4");
                             navigate("/applicants/blacklist");
                         }}
                     />

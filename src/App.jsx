@@ -11,6 +11,8 @@ import JobPostingPage from "./pages/JobPostings";
 import ApplicantsListPage from "./pages/Applicants/ApplicantsListPage";
 import ApplicantsDetailsPage from "./pages/Applicants/ApplicantDetailsPage";
 import BlackListPage from "./pages/Applicants/BlackListPage";
+import CandidatesPage from "./pages/Applicants/CandidatesPage";
+import ShortListPage from "./pages/Applicants/ShortListPage";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path="/applicants" element={<ApplicantsPage />}>
                         <Route index element={<ApplicantsListPage />} />
                         <Route path="blacklist" element={<BlackListPage />} />
+                        <Route path="candidates" element={<CandidatesPage />} />
+                        <Route path="shortlist" element={<ShortListPage />} />
                         <Route path=":id" element={<ApplicantsDetailsPage />} />
                     </Route>
                     <Route path="/jobs" element={<JobPostingPage />} />

@@ -3,8 +3,9 @@ import { useApplicantsContext } from "../../../pages/Applicants/hook/useApplican
 import axios from "axios";
 import * as ActionTypes from "../../../pages/Applicants/context/ActionTypes";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
-const ApplicantsList = () => {
+const ShortList = () => {
     const { applicants, dispatch } = useApplicantsContext();
     useEffect(() => {
         axios.get("http://localhost:3001/Applicants").then((response) => {
@@ -14,6 +15,7 @@ const ApplicantsList = () => {
             });
         });
     }, [dispatch]);
+    const shortlist = applicants.filter((applicant) => applicant.IsShortlisted);
     console.log(applicants);
     const tableHead = [
         { id: 1, title: "S. No" },
@@ -22,9 +24,9 @@ const ApplicantsList = () => {
         { id: 4, title: "Phone No." },
         { id: 5, title: "Referred By" },
     ];
-    const applicantList = applicants.filter(
-        (applicant) => !applicant.IsBlacklisted
-    );
+
+    const handleAddCandidate = () => {};
+
     return (
         <div>
             <table>
@@ -33,10 +35,11 @@ const ApplicantsList = () => {
                         {tableHead.map((title) => (
                             <th key={title.id}>{title.title}</th>
                         ))}
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {applicantList?.map((applicant, i) => (
+                    {shortlist?.map((applicant, i) => (
                         <tr key={applicant.id}>
                             <td>{i + 1}</td>
                             <td>
@@ -45,17 +48,19 @@ const ApplicantsList = () => {
                                         applicant.MiddleName
                                             ? applicant.MiddleName
                                             : "\u00A0"
-                                    } ${applicant.LastName} `}
-                                    {applicant.IsShortlisted && (
-                                        <span className="text-sm italic text-gray-500">
-                                            (Shortlisted)
-                                        </span>
-                                    )}
+                                    } ${applicant.LastName}`}
                                 </Link>
                             </td>
                             <td>{applicant.PrimaryEmail}</td>
                             <td>{applicant.PrimaryPhoneNumber}</td>
                             <td>{applicant.ReferredBy}</td>
+                            <td
+                                onClick={() => {
+                                    handleAddCandidate();
+                                }}
+                            >
+                                <Button>Add Candidate</Button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -64,4 +69,4 @@ const ApplicantsList = () => {
     );
 };
 
-export default ApplicantsList;
+export default ShortList;
