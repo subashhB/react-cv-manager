@@ -4,6 +4,7 @@ import axios from "axios";
 import * as ActionTypes from "../../../pages/Applicants/context/ActionTypes";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 
 const ShortList = () => {
     const { applicants, dispatch } = useApplicantsContext();
@@ -26,31 +27,49 @@ const ShortList = () => {
     ];
 
     const handleAddCandidate = (applicant) => {
-        console.log(applicant);
         const candidate = {
             ApplicantsId: applicant.id,
             CandidateStatus: "",
             Remarks: "",
         };
-        axios.post("http://localhost:3001/Candidates", candidate);
+        const message = `${applicant.FirstName} ${
+            applicant.MiddleName && `${applicant.MiddleName} `
+        }${applicant.LastName} has been added as Candidate`;
+        console.log("message", message);
+        axios
+            .post("http://localhost:3001/Candidates", candidate)
+            .then(() => {
+                toast.success(message, {
+                    theme: "light",
+                    position: "top-right",
+                });
+            })
+            .catch((error) =>
+                toast.error(error.message, {
+                    position: "top-right",
+                    theme: "light",
+                })
+            );
     };
 
     return (
         <div>
-            <table>
-                <thead>
+            <table className="table">
+                <thead className="thead">
                     <tr>
                         {tableHead.map((title) => (
-                            <th key={title.id}>{title.title}</th>
+                            <th key={title.id} className="th">
+                                {title.title}
+                            </th>
                         ))}
-                        <th></th>
+                        <th className="th" />
                     </tr>
                 </thead>
                 <tbody>
                     {shortlist?.map((applicant, i) => (
-                        <tr key={applicant.id}>
-                            <td>{i + 1}</td>
-                            <td>
+                        <tr key={applicant.id} className="tr">
+                            <td className="td">{i + 1}</td>
+                            <td className="td">
                                 <Link to={`/applicants/${applicant.id}`}>
                                     {`${applicant.FirstName} ${
                                         applicant.MiddleName
@@ -59,10 +78,13 @@ const ShortList = () => {
                                     } ${applicant.LastName}`}
                                 </Link>
                             </td>
-                            <td>{applicant.PrimaryEmail}</td>
-                            <td>{applicant.PrimaryPhoneNumber}</td>
-                            <td>{applicant.ReferredBy}</td>
+                            <td className="td">{applicant.PrimaryEmail}</td>
+                            <td className="td">
+                                {applicant.PrimaryPhoneNumber}
+                            </td>
+                            <td className="td">{applicant.ReferredBy}</td>
                             <td
+                                className="td"
                                 onClick={() => {
                                     handleAddCandidate(applicant);
                                 }}

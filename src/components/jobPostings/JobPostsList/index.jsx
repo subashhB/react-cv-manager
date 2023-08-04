@@ -13,11 +13,11 @@ const JobPostsList = ({ handleDelete, jobPostList, passJobToFormForEdit }) => {
     ];
 
     return (
-        <table className="tw-table">
-            <thead>
+        <table className="table">
+            <thead className="thead">
                 <tr>
                     {tableHead.map((heading) => (
-                        <th key={heading.id} className="tw-td">
+                        <th key={heading.id} className="th">
                             {heading.title}
                         </th>
                     ))}
@@ -25,17 +25,15 @@ const JobPostsList = ({ handleDelete, jobPostList, passJobToFormForEdit }) => {
             </thead>
             <tbody>
                 {jobPostList?.map((jobPost, i) => (
-                    <tr key={jobPost.id}>
-                        <td className="tw-td">{i + 1}</td>
-                        <td className="tw-td">{jobPost.JobPosition.Name}</td>
-                        <td className="tw-td">{jobPost.NumberOfOpenings}</td>
-                        <td className="tw-td">{jobPost.PublishedOn}</td>
-                        <td className="tw-td">{jobPost.ApplicationFromDate}</td>
-                        <td className="tw-td">
-                            {jobPost.ApplicationExpiryDate}
-                        </td>
-                        <td className="flex">
-                            <div className="cursor-pointer">
+                    <tr className="tr" key={jobPost.id}>
+                        <td className="td">{i + 1}</td>
+                        <td className="td">{jobPost.JobPosition.Name}</td>
+                        <td className="td">{jobPost.NumberOfOpenings}</td>
+                        <td className="td">{jobPost.PublishedOn}</td>
+                        <td className="td">{jobPost.ApplicationFromDate}</td>
+                        <td className="td">{jobPost.ApplicationExpiryDate}</td>
+                        <td className="flex td">
+                            <div className="cursor-pointer hover:text-gray-900">
                                 <AiFillEdit
                                     size={20}
                                     onClick={() =>
@@ -43,7 +41,7 @@ const JobPostsList = ({ handleDelete, jobPostList, passJobToFormForEdit }) => {
                                     }
                                 />
                             </div>
-                            <div className="ms-5 cursor-pointer">
+                            <div className="ms-5 cursor-pointer hover:text-gray-900">
                                 <AiFillDelete
                                     size={20}
                                     onClick={() => {

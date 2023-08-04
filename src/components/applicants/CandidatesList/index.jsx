@@ -39,26 +39,30 @@ const CanididatesList = () => {
     };
     return (
         <>
-            <table>
-                <thead>
+            <table className="table">
+                <thead className="thead">
                     <tr>
                         {tableHead.map((heading) => (
-                            <th key={heading.id}>{heading.title}</th>
+                            <th key={heading.id} className="th">
+                                {heading.title}
+                            </th>
                         ))}
-                        <th />
+                        <th className="th" />
                     </tr>
                 </thead>
                 <tbody>
                     {canditades?.map((candidate, i) => (
-                        <tr key={candidate.id}>
-                            <td>{i + 1}</td>
-                            <td>{`${candidate.Applicants.FirstName} ${
+                        <tr key={candidate.id} className="tr">
+                            <td className="td">{i + 1}</td>
+                            <td className="td">{`${
+                                candidate.Applicants.FirstName
+                            } ${
                                 candidate.Applicants.MiddleName &&
                                 `${candidate.Applicants.MiddleName} `
                             }${candidate.Applicants.LastName}`}</td>
-                            <td>{candidate.Status || "N/A"}</td>
-                            <td>{candidate.Remarks || "N/A"}</td>
-                            <td>
+                            <td className="td">{candidate.Status || "N/A"}</td>
+                            <td className="td">{candidate.Remarks || "N/A"}</td>
+                            <td className="td">
                                 {" "}
                                 <Button>Update</Button>
                                 <Button

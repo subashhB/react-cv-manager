@@ -27,19 +27,21 @@ const ApplicantsList = () => {
     );
     return (
         <div>
-            <table>
-                <thead>
+            <table className="table">
+                <thead className="thead">
                     <tr>
                         {tableHead.map((title) => (
-                            <th key={title.id}>{title.title}</th>
+                            <th key={title.id} className="th">
+                                {title.title}
+                            </th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
                     {applicantList?.map((applicant, i) => (
-                        <tr key={applicant.id}>
-                            <td>{i + 1}</td>
-                            <td>
+                        <tr key={applicant.id} className="tr">
+                            <td className="td">{i + 1}</td>
+                            <td className="td">
                                 <Link to={`/applicants/${applicant.id}`}>
                                     {`${applicant.FirstName} ${
                                         applicant.MiddleName
@@ -53,9 +55,11 @@ const ApplicantsList = () => {
                                     )}
                                 </Link>
                             </td>
-                            <td>{applicant.PrimaryEmail}</td>
-                            <td>{applicant.PrimaryPhoneNumber}</td>
-                            <td>{applicant.ReferredBy}</td>
+                            <td className="td">{applicant.PrimaryEmail}</td>
+                            <td className="td">
+                                {applicant.PrimaryPhoneNumber}
+                            </td>
+                            <td className="td">{applicant.ReferredBy}</td>
                         </tr>
                     ))}
                 </tbody>
