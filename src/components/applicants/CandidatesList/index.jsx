@@ -18,9 +18,13 @@ const CanididatesList = () => {
         { id: 3, title: "Status" },
         { id: 4, title: "Remarks" },
     ];
-    // const handleRemove = () =>{
-    //     axios.delete("http://localhost:")
-    // }
+    const handleRemove = (id) => {
+        axios
+            .delete(`http://localhost:3001/Candidates/${id}`)
+            .catch((error) => {
+                console.error(error.error);
+            });
+    };
     return (
         <table>
             <thead>
@@ -44,7 +48,12 @@ const CanididatesList = () => {
                         <td>
                             {" "}
                             <Button>Update</Button>
-                            <Button sx={{ color: "red" }}>Remove</Button>{" "}
+                            <Button
+                                sx={{ color: "red" }}
+                                onClick={handleRemove}
+                            >
+                                Remove
+                            </Button>{" "}
                         </td>
                     </tr>
                 ))}

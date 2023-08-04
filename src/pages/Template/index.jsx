@@ -1,7 +1,7 @@
 import React from "react";
 
 const TemplatePage = () => {
-    return <div>TemplatePage</div>;
+    return <div className="pages">TemplatePage</div>;
 };
 
 export default TemplatePage;

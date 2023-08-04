@@ -1,7 +1,7 @@
 import React from "react";
 
 const AssessmentTestPage = () => {
-    return <div>AssessmentTestPage</div>;
+    return <div className="pages">AssessmentTestPage</div>;
 };
 
 export default AssessmentTestPage;

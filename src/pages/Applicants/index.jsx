@@ -1,10 +1,23 @@
 import { Tab, Tabs } from "@mui/material";
-import React, { useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { ApplicantsContextProvider } from "./context/ApplicantsProvider";
 
 const ApplicantsPage = () => {
     const [value, setValue] = useState("1");
+    const location = useLocation();
+    console.log(location);
+    useEffect(() => {
+        if (location.pathname === "/applicants") {
+            setValue("1");
+        } else if (location.pathname === "/applicants/shortlist") {
+            setValue("2");
+        } else if (location.pathname === "/applicants/candidates") {
+            setValue("3");
+        } else if (location.pathname === "/applicants/blacklist") {
+            setValue("4");
+        }
+    }, [location.pathname]);
     const navigate = useNavigate();
     return (
         <ApplicantsContextProvider>
