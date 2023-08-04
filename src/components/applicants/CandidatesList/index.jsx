@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const CanididatesList = () => {
     const [canditades, setCandidates] = useState([]);
@@ -23,9 +24,17 @@ const CanididatesList = () => {
             .delete(`http://localhost:3001/Candidates/${id}`)
             .then(() => {
                 setCandidates((prev) => prev.filter((data) => data.id !== id));
+                toast.success("Candidate has been successfully removed", {
+                    position: "top-right",
+                    theme: "light",
+                });
             })
             .catch((error) => {
-                console.error(error.error);
+                console.log(error);
+                toast.error(error.message, {
+                    position: "top-right",
+                    theme: "light",
+                });
             });
     };
     return (
