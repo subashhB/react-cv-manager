@@ -270,8 +270,9 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                             open={open}
                             onClose={handleClose}
                             aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
                         >
-                            <Box className=" absolute top-1/3 left-[35%] w-[500px] h-[300px] shadow-lg p-16 bg-secondary">
+                            <Box className=" absolute text-centerter rounded-lg top-1/3 left-[35%] w-[500px] h-[300px] shadow-lg p-16 bg-white">
                                 <Typography
                                     id="modal-modal-title"
                                     variant="h6"
@@ -280,34 +281,35 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                                     Reason for Black Listing Applicant
                                 </Typography>
                                 <TextareaAutosize
-                                    className="w-[350px] my-2 rounded-lg"
+                                    id="modal-modal-description"
+                                    className="w-[350px] my-2 ms-2 rounded-lg border border-gray-500"
                                     minRows={3}
                                     placeholder="Eg. Skills not Sufficient...."
                                     onChange={(e) => {
                                         setRemarks(e.target.value);
                                     }}
                                 />
-                                <Button
-                                    className="mt-3"
-                                    variant="outlined"
-                                    sx={{
-                                        marginInlineStart: "60px",
-                                        color: "red",
-                                        borderColor: "red",
-                                        ":hover": {
-                                            border: "white",
-                                            color: "white",
-                                            backgroundColor: "red",
-                                        },
-                                    }}
-                                    onClick={() => {
-                                        handleBlackListCandidate(
-                                            applicantDetails.id
-                                        );
-                                    }}
-                                >
-                                    Black List Applicant
-                                </Button>
+                                <Box className="flex justify-center mt-7">
+                                    <Button
+                                        variant="outlined"
+                                        color="inherit"
+                                        onClick={() => handleClose()}
+                                    >
+                                        Cancel
+                                    </Button>
+                                    <Button
+                                        className="mt-6"
+                                        variant="outlined"
+                                        color="error"
+                                        onClick={() => {
+                                            handleBlackListCandidate(
+                                                applicantDetails.id
+                                            );
+                                        }}
+                                    >
+                                        Black List Applicant
+                                    </Button>
+                                </Box>
                             </Box>
                         </Modal>
                     </div>

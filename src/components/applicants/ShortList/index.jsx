@@ -28,7 +28,7 @@ const ShortList = () => {
     const handleAddCandidate = (applicant) => {
         console.log(applicant);
         const candidate = {
-            ApplicantId: applicant.id,
+            ApplicantsId: applicant.id,
             CandidateStatus: "",
             Remarks: "",
         };

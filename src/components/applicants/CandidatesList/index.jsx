@@ -21,44 +21,49 @@ const CanididatesList = () => {
     const handleRemove = (id) => {
         axios
             .delete(`http://localhost:3001/Candidates/${id}`)
+            .then(() => {
+                setCandidates((prev) => prev.filter((data) => data.id !== id));
+            })
             .catch((error) => {
                 console.error(error.error);
             });
     };
     return (
-        <table>
-            <thead>
-                <tr>
-                    {tableHead.map((heading) => (
-                        <th key={heading.id}>{heading.title}</th>
-                    ))}
-                    <th />
-                </tr>
-            </thead>
-            <tbody>
-                {canditades?.map((candidate, i) => (
-                    <tr key={candidate.id}>
-                        <td>{i + 1}</td>
-                        <td>{`${candidate.Applicants.FirstName} ${
-                            candidate.Applicants.MiddleName &&
-                            `${candidate.Applicants.MiddleName} `
-                        }${candidate.Applicants.LastName}`}</td>
-                        <td>{candidate.Status || "N/A"}</td>
-                        <td>{candidate.Remarks || "N/A"}</td>
-                        <td>
-                            {" "}
-                            <Button>Update</Button>
-                            <Button
-                                sx={{ color: "red" }}
-                                onClick={handleRemove}
-                            >
-                                Remove
-                            </Button>{" "}
-                        </td>
+        <>
+            <table>
+                <thead>
+                    <tr>
+                        {tableHead.map((heading) => (
+                            <th key={heading.id}>{heading.title}</th>
+                        ))}
+                        <th />
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {canditades?.map((candidate, i) => (
+                        <tr key={candidate.id}>
+                            <td>{i + 1}</td>
+                            <td>{`${candidate.Applicants.FirstName} ${
+                                candidate.Applicants.MiddleName &&
+                                `${candidate.Applicants.MiddleName} `
+                            }${candidate.Applicants.LastName}`}</td>
+                            <td>{candidate.Status || "N/A"}</td>
+                            <td>{candidate.Remarks || "N/A"}</td>
+                            <td>
+                                {" "}
+                                <Button>Update</Button>
+                                <Button
+                                    sx={{ color: "red" }}
+                                    onClick={() => handleRemove(candidate.id)}
+                                >
+                                    Remove
+                                </Button>{" "}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </>
     );
 };
 
