@@ -58,14 +58,14 @@ const SidebarComponents = () => {
             link: "/interviewer",
         },
         {
-            logo: <AiOutlineFolderOpen size={28} />,
-            caption: "Template",
-            link: "/template",
-        },
-        {
             logo: <PiExam size={28} />,
             caption: "Assessment Test",
             link: "/assessmentTest",
+        },
+        {
+            logo: <AiOutlineFolderOpen size={28} />,
+            caption: "Template",
+            link: "/template",
         },
         {
             logo: <PiEnvelopeSimple size={28} />,

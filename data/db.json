@@ -264,9 +264,9 @@
   "Candidates": [
     {
       "ApplicantsId": 2,
-      "CandidateStatus": "Selected for Hiring",
-      "Remarks": "Passed all the Tests",
-      "id": 7
+      "CandidateStatus": "",
+      "Remarks": "",
+      "id": 1
     }
   ],
   "JobApplications": [],

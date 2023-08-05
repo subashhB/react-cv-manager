@@ -22,11 +22,11 @@ const CanididatesList = () => {
     const [remarks, setRemarks] = useState("");
 
     const statusArray = [
-        { id: 1, statusTitle: "Interviewing" },
-        { id: 2, statusTitle: "Selected for Hiring" },
-        { id: 3, statusTitle: "Result Pending" },
-        { id: 4, statusTitle: "Selected For Interview" },
-        { id: 5, statusTitle: "Selected For Assessment Test" },
+        { id: 1, statusTitle: "First Interview" },
+        { id: 2, statusTitle: "Second Interview" },
+        { id: 3, statusTitle: "Third Interview" },
+        { id: 4, statusTitle: "Result Pending" },
+        { id: 5, statusTitle: "Hired" },
         { id: 6, statusTitle: "Rejected" },
     ];
 
@@ -41,8 +41,10 @@ const CanididatesList = () => {
     const tableHead = [
         { id: 1, title: "S.No." },
         { id: 2, title: "Candidate Name" },
-        { id: 3, title: "Status" },
-        { id: 4, title: "Remarks" },
+        { id: 3, title: "E-mail" },
+        { id: 4, title: "Phone No." },
+        { id: 5, title: "Status" },
+        { id: 6, title: "Remarks" },
     ];
     const handleOpen = (id, applicantId) => {
         setId(id);
@@ -138,6 +140,12 @@ const CanididatesList = () => {
                                 `${candidate.Applicants.MiddleName} `
                             }${candidate.Applicants.LastName}`}</td>
                             <td className="td">
+                                {candidate.Applicants.PrimaryEmail}
+                            </td>
+                            <td className="td">
+                                {candidate.Applicants.PrimaryPhoneNumber}
+                            </td>
+                            <td className="td">
                                 {candidate.CandidateStatus || "N/A"}
                             </td>
                             <td className="td">{candidate.Remarks || "N/A"}</td>
@@ -206,6 +214,10 @@ const CanididatesList = () => {
                                 minRows={3}
                                 value={remarks}
                                 placeholder="Remarks for the Status"
+                                hidden={
+                                    status === "First Interview" ||
+                                    status === ""
+                                }
                                 onChange={(e) => {
                                     setRemarks(e.target.value);
                                 }}
