@@ -37,7 +37,6 @@ const CanididatesList = () => {
                 setCandidates(response.data);
             });
     }, []);
-    console.log(canditades);
     const tableHead = [
         { id: 1, title: "S.No." },
         { id: 2, title: "Candidate Name" },
@@ -48,7 +47,6 @@ const CanididatesList = () => {
     ];
     const handleOpen = (id, applicantId) => {
         setId(id);
-        console.log(applicantId);
         setApplicantsId(applicantId);
         setOpen(true);
     };

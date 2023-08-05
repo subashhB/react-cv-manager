@@ -14,7 +14,6 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
     const [remarks, setRemarks] = useState("");
     const [domains, setDomains] = useState([]);
     useEffect(() => {
-        console.log("Id", id);
         if (id) {
             axios
                 .get(`http://localhost:3001/Applicants/${id}`)
@@ -24,13 +23,10 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
                         response.data.JobDomains.includes(domain.id)
                     );
                     setDomains(filteredDomains);
-
-                    console.log("Response", response.data);
                 })
                 .catch((error) => console.log(error));
         }
     }, [id, jobDomains]);
-    console.log(domains);
     const handleShortListCandidate = (id) => {
         const shortListedCandidate = {
             ...applicantDetails,
@@ -69,7 +65,6 @@ const ApplicantsDetails = ({ id, jobDomains }) => {
     const handleClose = () => {
         setOpen(false);
     };
-    console.log("Remarks: ", remarks);
     return (
         <div className="ms-10 mb-20 text-gray-700">
             {applicantDetails ? (

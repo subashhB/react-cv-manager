@@ -14,7 +14,6 @@ const ApplicantsList = () => {
             });
         });
     }, [dispatch]);
-    console.log(applicants);
     const tableHead = [
         { id: 1, title: "S. No" },
         { id: 2, title: "Name" },

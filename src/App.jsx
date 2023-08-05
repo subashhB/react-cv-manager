@@ -13,6 +13,7 @@ import ApplicantsDetailsPage from "./pages/Applicants/ApplicantDetailsPage";
 import BlackListPage from "./pages/Applicants/BlackListPage";
 import CandidatesPage from "./pages/Applicants/CandidatesPage";
 import ShortListPage from "./pages/Applicants/ShortListPage";
+import JobApplicationPage from "./pages/Applicants/JobApplicationPage";
 
 function App() {
     return (
@@ -25,6 +26,10 @@ function App() {
                         <Route path="blacklist" element={<BlackListPage />} />
                         <Route path="candidates" element={<CandidatesPage />} />
                         <Route path="shortlist" element={<ShortListPage />} />
+                        <Route
+                            path="jobapplication"
+                            element={<JobApplicationPage />}
+                        />
                         <Route path=":id" element={<ApplicantsDetailsPage />} />
                     </Route>
                     <Route path="/jobs" element={<JobPostingPage />} />

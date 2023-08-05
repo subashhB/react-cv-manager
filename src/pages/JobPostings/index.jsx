@@ -14,8 +14,6 @@ const JobPostingPage = () => {
 
     const handleEdit = (jobPost, selectedJobPosition) => {
         delete jobPost.JobPosition;
-        console.log("Job Post", jobPost);
-        console.log("selectedjobpost", selectedJobPosition);
         axios
             .put(`http://localhost:3001/JobPostings/${jobToUpdate.id}`, jobPost)
             .then((response) => {
@@ -32,8 +30,6 @@ const JobPostingPage = () => {
                 setJobToUpdate(null);
             });
     };
-
-    console.log("Job Post List", jobPostList);
     const passJobToFormForEdit = (job) => {
         setJobToUpdate(job);
     };
@@ -41,13 +37,11 @@ const JobPostingPage = () => {
     useEffect(() => {
         axios
             .get("http://localhost:3001/JobPostings?_expand=JobPosition")
-            .then((repsonse) => {
-                setJobPostList(repsonse.data);
-                console.log(repsonse);
+            .then((response) => {
+                setJobPostList(response.data);
             })
             .catch((error) => console.log(error));
     }, []);
-    console.log("jobToUpdate", jobToUpdate);
     return (
         <div className="pages">
             <JobPostingForm

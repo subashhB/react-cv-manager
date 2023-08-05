@@ -17,7 +17,6 @@ const ShortList = () => {
         });
     }, [dispatch]);
     const shortlist = applicants.filter((applicant) => applicant.IsShortlisted);
-    console.log(applicants);
     const tableHead = [
         { id: 1, title: "S. No" },
         { id: 2, title: "Name" },
@@ -35,7 +34,6 @@ const ShortList = () => {
         const message = `${applicant.FirstName} ${
             applicant.MiddleName && `${applicant.MiddleName} `
         }${applicant.LastName} has been added as Candidate`;
-        console.log("message", message);
         axios
             .post("http://localhost:3001/Candidates", candidate)
             .then(() => {
