@@ -8,7 +8,7 @@ const JobPostingForm = ({
     handleEdit,
 }) => {
     const initialState = {
-        JobPositionId: 1,
+        JobPositionsId: 1,
         NumberOfOpenings: "",
         PublishedOn: new Date().toISOString(),
         ApplicationFromDate: "",

@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineFolderOpen } from "react-icons/ai";
-import { BsPersonFill } from "react-icons/bs";
+import { BsFillPeopleFill } from "react-icons/bs";
 import { ImPencil2 } from "react-icons/im";
 import {
     PiChalkboardTeacherFill,
@@ -9,8 +9,8 @@ import {
     PiSuitcaseSimpleLight,
 } from "react-icons/pi";
 import { RxDashboard } from "react-icons/rx";
-import logo from "../../../assets/logo.png";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 
 const Sidebar = () => {
     const sidebarComponents = SidebarComponents();
@@ -38,7 +38,7 @@ const SidebarComponents = () => {
             link: "/",
         },
         {
-            logo: <BsPersonFill size={28} />,
+            logo: <BsFillPeopleFill size={22} />,
             caption: "Applicants",
             link: "/applicants",
         },

@@ -9,7 +9,7 @@ const ApplicantsPage = () => {
     useEffect(() => {
         if (location.pathname === "/applicants") {
             setValue("1");
-        } else if (location.pathname === "/applcants/jobapplication") {
+        } else if (location.pathname === "/applicants/jobapplication") {
             setValue("2");
         } else if (location.pathname === "/applicants/shortlist") {
             setValue("3");
