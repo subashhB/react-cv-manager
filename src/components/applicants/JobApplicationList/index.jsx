@@ -6,16 +6,22 @@ import {
     MenuItem,
     Modal,
     Select,
+    TextField,
     Tooltip,
     Typography,
 } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const JobApplicationList = ({ applicants, jobPositions }) => {
     const [jobApplications, setJobApplications] = useState([]);
     const [open, setOpen] = useState(false);
-    const [status, setStatus] = useState("");
+    const [jobApplicationToUpdate, setJobApplicationToUpdate] = useState(null);
+    const [applicationStatus, setApplicationStatus] = useState("");
+    const [negotiatedSalary, setNegotiatedSalary] = useState("");
+    const [hiredOn, setHiredOn] = useState("");
+
     useEffect(() => {
         axios
             .get("http://localhost:3001/JobApplications?_expand=JobPostings")
@@ -32,7 +38,7 @@ const JobApplicationList = ({ applicants, jobPositions }) => {
         { id: 7, title: "Negotiated Salary" },
         { id: 8, title: "" },
     ];
-    const applicationStatus = [
+    const applicationStatusArray = [
         { id: 1, status: "Applied" },
         { id: 2, status: "Interview Scheduled" },
         { id: 3, status: "Rejected" },
@@ -41,10 +47,12 @@ const JobApplicationList = ({ applicants, jobPositions }) => {
         { id: 6, status: "Offer Letter Sent" },
         { id: 7, status: "Hired" },
     ];
-    const handleOpen = () => {
+    const handleOpen = (jobApplication) => {
+        setJobApplicationToUpdate(jobApplication);
         setOpen(true);
     };
     const handleClose = () => {
+        setJobApplicationToUpdate(null);
         setOpen(false);
     };
     const handleApplicantName = (id) => {
@@ -58,7 +66,44 @@ const JobApplicationList = ({ applicants, jobPositions }) => {
         const applicant = applicants.find((person) => person.id === id);
         return applicant.IsBlacklisted;
     };
-    const handleUpdateApplication = () => {};
+    const handleUpdateApplication = () => {
+        const updatedJobApplication = {
+            id: jobApplicationToUpdate.id,
+            JobPostingsId: jobApplicationToUpdate.JobPostingsId,
+            ApplicantsId: jobApplicationToUpdate.ApplicantsId,
+            ApplicationDate: jobApplicationToUpdate.ApplicationDate,
+            JobApplicationStatus: applicationStatus,
+            NegotiatedSalary: negotiatedSalary,
+            HiredOn: hiredOn,
+        };
+        axios
+            .patch(
+                `http://localhost:3001/JobApplications/${updatedJobApplication.id}`,
+                updatedJobApplication
+            )
+            .then(() =>
+                setJobApplications((prev) =>
+                    prev.map((item) =>
+                        item.id !== updatedJobApplication.id
+                            ? item
+                            : {
+                                  ...item,
+                                  JobApplicationStatus: applicationStatus,
+                                  NegotiatedSalary: negotiatedSalary,
+                                  HiredOn: hiredOn,
+                              }
+                    )
+                )
+            )
+            .then(() => {
+                handleClose();
+                toast.success("Application Successfully Updated", {
+                    position: "top-right",
+                    theme: "light",
+                });
+            });
+    };
+    console.log("status", applicationStatus);
     return (
         <>
             <table className="table">
@@ -95,13 +140,15 @@ const JobApplicationList = ({ applicants, jobPositions }) => {
                                     {jobApplication.ApplicationDate}
                                 </td>
                                 <td className="td">
-                                    {jobApplication.ApplicationStatus || "N/A"}
+                                    {jobApplication.JobApplicationStatus ||
+                                        "N/A"}
                                 </td>
                                 <td className="td">
-                                    {jobApplication.HiredOn || "N/A"}
+                                    {jobApplication.HiredOn || "Not Hired"}
                                 </td>
                                 <td className="td">
-                                    {jobApplication.NegotiatedSalary || "N/A"}
+                                    {jobApplication.NegotiatedSalary ||
+                                        "Not Hired"}
                                 </td>
                                 <td className="td">
                                     <Tooltip
@@ -122,7 +169,9 @@ const JobApplicationList = ({ applicants, jobPositions }) => {
                                                     jobApplication.ApplicantsId
                                                 )}
                                                 title="Button"
-                                                onClick={() => handleOpen()}
+                                                onClick={() =>
+                                                    handleOpen(jobApplication)
+                                                }
                                             >
                                                 Update
                                             </Button>
@@ -139,7 +188,10 @@ const JobApplicationList = ({ applicants, jobPositions }) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box className=" absolute text-centerter rounded-lg text-gray-800 top-[20%] left-[35%] w-[500px] h-[400px] shadow-lg p-16 bg-white">
+                <Box
+                    className=" absolute  text-centerter rounded-lg text-gray-800 top-[17%] left-[35%] w-[500px] h-[500px] shadow-lg p-16 bg-white"
+                    position="relative"
+                >
                     <Typography
                         id="modal-modal-title"
                         variant="h6"
@@ -158,22 +210,52 @@ const JobApplicationList = ({ applicants, jobPositions }) => {
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                value={status}
+                                className="my-2"
+                                value={applicationStatus}
                                 label="Status"
                                 onChange={(e) => {
-                                    setStatus(e.target.value);
+                                    setApplicationStatus(e.target.value);
                                 }}
                             >
-                                {applicationStatus.map((statusItem) => (
-                                    <MenuItem value={statusItem.status}>
-                                        {statusItem.status}
-                                    </MenuItem>
-                                ))}
+                                {applicationStatusArray.map(
+                                    (applicantionState) => (
+                                        <MenuItem
+                                            value={applicantionState.status}
+                                            key={applicantionState.id}
+                                        >
+                                            {applicantionState.status}
+                                        </MenuItem>
+                                    )
+                                )}
                             </Select>
+                            {applicationStatus === "Hired" && (
+                                <>
+                                    <input
+                                        id="date-picker"
+                                        className="ms-1 mt-4 mb-6"
+                                        type="date"
+                                        value={hiredOn}
+                                        onChange={(e) => {
+                                            setHiredOn(e.target.value);
+                                        }}
+                                    />
+                                    <TextField
+                                        id="simple-textfield"
+                                        label="Negotiated Salary"
+                                        type="number"
+                                        value={negotiatedSalary}
+                                        onChange={(e) =>
+                                            setNegotiatedSalary(
+                                                e.target.valueAsNumber
+                                            )
+                                        }
+                                    />
+                                </>
+                            )}
                         </FormControl>
                     </Box>
 
-                    <Box className="flex justify-center mt-4">
+                    <Box className="w-5/6 flex absolute left-[7.25rem] bottom-10 mt-4">
                         <Button
                             variant="outlined"
                             color="inherit"

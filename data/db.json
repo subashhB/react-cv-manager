@@ -255,8 +255,8 @@
     "Candidates": [
         {
             "ApplicantsId": 2,
-            "CandidateStatus": "",
-            "Remarks": "",
+            "CandidateStatus": "Second Interview",
+            "Remarks": "Passed First Interview",
             "id": 1
         }
     ],
@@ -266,27 +266,23 @@
             "JobPostingsId": 1,
             "ApplicantsId": 1,
             "ApplicationDate": "2023-07-29",
-            "JobApplicationStatus": "",
-            "NegotiatiedSalary": "",
-            "Hired On": ""
+            "JobApplicationStatus": ""
         },
         {
             "id": 2,
             "JobPostingsId": 1,
             "ApplicantsId": 2,
             "ApplicationDate": "2023-07-29",
-            "JobApplicationStatus": "",
-            "NegotiatiedSalary": "",
-            "Hired On": ""
+            "JobApplicationStatus": "Hired",
+            "NegotiatedSalary": 65000,
+            "HiredOn": "2023-08-16"
         },
         {
             "id": 3,
             "JobPostingsId": 1,
             "ApplicantsId": 3,
             "ApplicationDate": "2023-07-29",
-            "JobApplicationStatus": "",
-            "NegotiatiedSalary": "",
-            "Hired On": ""
+            "JobApplicationStatus": ""
         }
     ],
     "Interviews": [],
