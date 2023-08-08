@@ -175,7 +175,18 @@
             "ApplicationFromDate": "2023-07-31",
             "ApplicationExpiryDate": "2023-08-04",
             "JobApplicationStatusId": 1,
+            "JobPositionId": 8,
             "id": 1
+        },
+        {
+            "JobPositionsId": 1,
+            "NumberOfOpenings": 5,
+            "PublishedOn": "2023-08-07T08:53:26.038Z",
+            "ApplicationFromDate": "2023-08-10",
+            "ApplicationExpiryDate": "2023-08-30",
+            "JobApplicationStatusId": 1,
+            "JobPositionId": 8,
+            "id": 2
         }
     ],
     "Applicants": [
@@ -196,7 +207,7 @@
             "CVUrl": "https://cv.com/rambahadurthapa_cb.pdf",
             "ProfilePictureUrl": "https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg",
             "IsBlacklisted": true,
-            "BlacklistedReason": "Skills are not Sufficient",
+            "BlacklistedReason": "Test",
             "IsShortlisted": false,
             "ExperienceInMonthsWithCompanyName": "36, SB Tech Pvt. Ltd",
             "RegisteredOn": "2023-07-29",
@@ -256,7 +267,7 @@
         {
             "ApplicantsId": 2,
             "CandidateStatus": "Second Interview",
-            "Remarks": "Passed First Interview",
+            "Remarks": "Passed First",
             "id": 1
         }
     ],
@@ -282,12 +293,45 @@
             "JobPostingsId": 1,
             "ApplicantsId": 3,
             "ApplicationDate": "2023-07-29",
-            "JobApplicationStatus": ""
+            "JobApplicationStatus": "Hired",
+            "NegotiatedSalary": 45000,
+            "HiredOn": "2023-08-15"
         }
     ],
     "Interviews": [],
     "InterviewDetails": [],
-    "Interviewers": [],
+    "Interviewers": [
+        {
+            "id": 1,
+            "Name": "Ram Shrestha",
+            "Email": "ramshrestha20@gmail.com",
+            "Phone": "9841987293"
+        },
+        {
+            "id": 2,
+            "Name": "Jayanti Sharma",
+            "Email": "jntyshrma@gmail.com",
+            "Phone": "9801298374"
+        },
+        {
+            "id": 3,
+            "Name": "Gaurab Karki",
+            "Email": "gaurabkarki90@gmail.com",
+            "Phone": "9813125874"
+        },
+        {
+            "id": 4,
+            "Name": "Kanchan Shrestha",
+            "Email": "kanchanshrestha3@gmail.com",
+            "Phone": "9843766464"
+        },
+        {
+            "id": 5,
+            "Name": "Nischal Bade",
+            "Email": "nischalbade100@gmail.com",
+            "Phone": "9813342334"
+        }
+    ],
     "InterviewersJobDomains": [],
     "JobApplicationInterviewers": [],
     "JobApplicationStatusChangeLogs": [],
