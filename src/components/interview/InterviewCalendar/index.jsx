@@ -17,6 +17,7 @@ import {
     TextField,
     Typography,
 } from "@mui/material";
+import { info } from "autoprefixer";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -30,7 +31,7 @@ const InterviewCalendar = ({
     handleAddNewInterview,
 }) => {
     const [open, setOpen] = useState(false);
-    const [events, setEvents] = useState([]);
+    const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [calendarEvents, setCalendarEvents] = useState([]);
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
@@ -38,6 +39,7 @@ const InterviewCalendar = ({
     const [interviewerId, setInterviewerId] = useState(1);
     const [candidateId, setCandidateId] = useState(1);
     const [interviewType, setInterviewType] = useState("");
+    const [eventInfo, setEventInfo] = useState(null);
     const [calendarApi, setCalendarApi] = useState(null);
 
     useEffect(() => {
@@ -96,6 +98,15 @@ const InterviewCalendar = ({
             fetchEvents();
         }
     }, [applicants, interviewers, interviews]);
+
+    const handleDeleteModalOpen = (info) => {
+        setDeleteModalOpen(true);
+        setEventInfo(info);
+    };
+    const handleDeleteModalClose = () => {
+        setDeleteModalOpen(false);
+        setEventInfo(null);
+    };
     const interviewTypes = [
         { id: 1, type: "HR Assessment" },
         { id: 2, type: "Technical Assessment" },
@@ -121,6 +132,7 @@ const InterviewCalendar = ({
         setInterviewType("");
         setTime("");
         setOpen(false);
+        setCalendarApi(null);
     };
 
     const handleApplicantName = (id) => {
@@ -139,6 +151,7 @@ const InterviewCalendar = ({
                 prev.filter((item) => item.id !== clickEventId)
             );
             eventInfo.event.remove();
+            handleDeleteModalClose();
         } catch (error) {
             console.log(error);
         }
@@ -221,7 +234,9 @@ const InterviewCalendar = ({
                                 selectMirror={true}
                                 selectable={true}
                                 select={(info) => handleOpen(info)}
-                                eventClick={handleEventClicked}
+                                eventClick={(eventInfo) =>
+                                    handleDeleteModalOpen(eventInfo)
+                                }
                                 eventContent={({ event }) => (
                                     <div className="cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis bg-blue-400 text-white mx-1 rounded">
                                         {event.title}
@@ -406,6 +421,49 @@ const InterviewCalendar = ({
                             }
                         >
                             Schedule Interview
+                        </Button>
+                    </Box>
+                </Box>
+            </Modal>
+            <Modal
+                open={deleteModalOpen}
+                onClose={handleDeleteModalClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box className=" absolute text-centerter rounded-lg top-1/3 left-[35%] w-[500px] h-[300px] shadow-lg p-16 bg-white">
+                    <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                    >
+                        Delete Interview
+                    </Typography>
+                    <Typography
+                        id="modal-description"
+                        variant="h6"
+                        component="h4"
+                    >
+                        Are you sure you want to delete this interview?
+                    </Typography>
+
+                    <Box className="flex justify-center mt-7">
+                        <Button
+                            variant="outlined"
+                            color="inherit"
+                            onClick={() => handleDeleteModalClose()}
+                        >
+                            Cancel
+                        </Button>
+                        <Button
+                            className="mt-6"
+                            variant="outlined"
+                            color="error"
+                            onClick={() => {
+                                handleEventClicked(eventInfo);
+                            }}
+                        >
+                            Delete Interview
                         </Button>
                     </Box>
                 </Box>

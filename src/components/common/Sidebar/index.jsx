@@ -1,7 +1,6 @@
 import React from "react";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
-import { ImPencil2 } from "react-icons/im";
 import {
     PiChalkboardTeacherFill,
     PiEnvelopeSimple,
@@ -9,6 +8,7 @@ import {
     PiSuitcaseSimpleLight,
 } from "react-icons/pi";
 import { RxDashboard } from "react-icons/rx";
+import { TbMessageCircleQuestion } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 
@@ -48,7 +48,7 @@ const SidebarComponents = () => {
             link: "/jobs",
         },
         {
-            logo: <ImPencil2 size={20} />,
+            logo: <TbMessageCircleQuestion size={22} />,
             caption: "Interview",
             link: "/interview",
         },
