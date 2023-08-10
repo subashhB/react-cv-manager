@@ -314,7 +314,55 @@
       "CandidatesId": 1,
       "Title": "Dot Net Interview",
       "InterviewersId": 5,
-      "date": "2023-08-10"
+      "date": "2023-08-10T16:30"
+    },
+    {
+      "InterviewType": "Technical Assessment",
+      "CandidatesId": 1,
+      "Title": "Dot Net Interview",
+      "InterviewersId": 5,
+      "date": "2023-08-11T18:48",
+      "id": 2
+    },
+    {
+      "InterviewType": "Negotiation Round",
+      "CandidatesId": 1,
+      "Title": "Dot Net Interview",
+      "InterviewersId": 5,
+      "date": "2023-08-07T18:56",
+      "id": 4
+    },
+    {
+      "InterviewType": "Technical Assessment",
+      "CandidatesId": 1,
+      "Title": "React Interview",
+      "InterviewersId": 1,
+      "date": "2023-08-16T12:03",
+      "id": 6
+    },
+    {
+      "InterviewType": "Technical Assessment",
+      "CandidatesId": 1,
+      "Title": "QA Interview",
+      "InterviewersId": 5,
+      "date": "2023-08-17T22:07",
+      "id": 7
+    },
+    {
+      "InterviewType": "Technical Assessment",
+      "CandidatesId": 1,
+      "Title": "React Interview",
+      "InterviewersId": 5,
+      "date": "2023-08-08T06:51",
+      "id": 8
+    },
+    {
+      "InterviewType": "Negotiation Round",
+      "CandidatesId": 1,
+      "Title": "QA Interview",
+      "InterviewersId": 1,
+      "date": "2023-08-15T06:58",
+      "id": 9
     }
   ],
   "InterviewDetails": [],
