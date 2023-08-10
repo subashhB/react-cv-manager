@@ -17,7 +17,16 @@ const TemplateEditor = ({ id }) => {
             });
     }, [id]);
     const handleSaveTemplate = () => {
-        console.log("handleSaveTemplate");
+        const updatedTemplate = {
+            ...template,
+            Template: content,
+        };
+        axios
+            .patch(
+                `http://localhost:3001/LetterTemplates/${template.id}`,
+                updatedTemplate
+            )
+            .then((response) => setTemplate(template));
     };
     console.log(id);
     console.log(template);
@@ -35,7 +44,10 @@ const TemplateEditor = ({ id }) => {
                     />
                     <template>{content}</template>
                     <Box className="flex justify-end w-full my-3">
-                        <Button onClick={() => handleSaveTemplate()}>
+                        <Button
+                            disabled={template.Template === content}
+                            onClick={() => handleSaveTemplate()}
+                        >
                             Save {template.LetterType} Template
                         </Button>
                     </Box>
