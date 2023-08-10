@@ -14,6 +14,8 @@ import BlackListPage from "./pages/Applicants/BlackListPage";
 import CandidatesPage from "./pages/Applicants/CandidatesPage";
 import ShortListPage from "./pages/Applicants/ShortListPage";
 import JobApplicationPage from "./pages/Applicants/JobApplicationPage";
+import TemplateEditorPage from "./pages/Template/TemplateEditorPage";
+import TemplateListPage from "./pages/Template/TemplateListPage";
 
 function App() {
     return (
@@ -35,7 +37,13 @@ function App() {
                     <Route path="/jobs" element={<JobPostingPage />} />
                     <Route path="/interview" element={<InterviewPage />} />
                     <Route path="/interviewer" element={<InterviewerPage />} />
-                    <Route path="/template" element={<TemplatePage />} />
+                    <Route path="/template" element={<TemplatePage />}>
+                        <Route index element={<TemplateListPage />} />
+                        <Route
+                            path="editor/:id"
+                            element={<TemplateEditorPage />}
+                        />
+                    </Route>
                     <Route
                         path="/assessmentTest"
                         element={<AssessmentTestPage />}

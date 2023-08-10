@@ -1,399 +1,393 @@
 {
-  "JobLevels": [
-    {
-      "id": 1,
-      "Name": "Associate"
-    },
-    {
-      "id": 2,
-      "Name": "Mid"
-    },
-    {
-      "id": 3,
-      "Name": "Senior"
-    }
-  ],
-  "JobDomains": [
-    {
-      "id": 1,
-      "Name": "DotNet"
-    },
-    {
-      "id": 2,
-      "Name": "React"
-    },
-    {
-      "id": 3,
-      "Name": "QA"
-    },
-    {
-      "id": 4,
-      "Name": "Support"
-    },
-    {
-      "id": 5,
-      "Name": "HR"
-    }
-  ],
-  "JobPositions": [
-    {
-      "id": 1,
-      "Name": "Associate DotNet Engineer",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 1,
-      "JobLevelId": 1
-    },
-    {
-      "id": 2,
-      "Name": "Mid DotNet Engineer",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 1,
-      "JobLevelId": 2
-    },
-    {
-      "id": 3,
-      "Name": "Senior DotNet Engineer",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 1,
-      "JobLevelId": 3
-    },
-    {
-      "id": 4,
-      "Name": "Associate React Engineer",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 2,
-      "JobLevelId": 1
-    },
-    {
-      "id": 5,
-      "Name": "Mid React Engineer",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 2,
-      "JobLevelId": 2
-    },
-    {
-      "id": 6,
-      "Name": "Senior React Engineer",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 2,
-      "JobLevelId": 3
-    },
-    {
-      "id": 7,
-      "Name": "Associate QA",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 3,
-      "JobLevelId": 1
-    },
-    {
-      "id": 8,
-      "Name": "Mid QA",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 3,
-      "JobLevelId": 2
-    },
-    {
-      "id": 9,
-      "Name": "Senior QA",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 3,
-      "JobLevelId": 3
-    },
-    {
-      "id": 10,
-      "Name": "Associate Support",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 4,
-      "JobLevelId": 1
-    },
-    {
-      "id": 11,
-      "Name": "Mid Support",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 4,
-      "JobLevelId": 2
-    },
-    {
-      "id": 12,
-      "Name": "Senior Support",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 4,
-      "JobLevelId": 3
-    },
-    {
-      "id": 13,
-      "Name": "Associate HR",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 5,
-      "JobLevelId": 1
-    },
-    {
-      "id": 14,
-      "Name": "Mid HR",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 5,
-      "JobLevelId": 2
-    },
-    {
-      "id": 15,
-      "Name": "Senior HR",
-      "JobDescriptionUrl": "example@description.com",
-      "IsActive": true,
-      "JobDomainId": 5,
-      "JobLevelId": 3
-    }
-  ],
-  "JobApplicatonStatusId": [
-    {
-      "id": 1,
-      "Name": "Acitve"
-    },
-    {
-      "id": 2,
-      "Name": "Inactive"
-    }
-  ],
-  "JobPostings": [
-    {
-      "JobPositionsId": 7,
-      "NumberOfOpenings": 8,
-      "PublishedOn": "2023-07-29T06:40:10.471Z",
-      "ApplicationFromDate": "2023-07-31",
-      "ApplicationExpiryDate": "2023-08-04",
-      "JobApplicationStatusId": 1,
-      "JobPositionId": 8,
-      "id": 1
-    },
-    {
-      "JobPositionsId": 1,
-      "NumberOfOpenings": 5,
-      "PublishedOn": "2023-08-07T08:53:26.038Z",
-      "ApplicationFromDate": "2023-08-10",
-      "ApplicationExpiryDate": "2023-08-30",
-      "JobApplicationStatusId": 1,
-      "JobPositionId": 8,
-      "id": 2
-    }
-  ],
-  "Applicants": [
-    {
-      "id": 1,
-      "FirstName": "Ram",
-      "MiddleName": "Bahadur",
-      "LastName": "Thapa",
-      "DOB": "1990-05-15",
-      "PrimaryEmail": "rambahadurthapa@gmail.com",
-      "PrimaryPhoneNumber": "9841984198",
-      "AlternateEmails": "rambahadurthapa2@example.com,rambahadurthapa3@example.com",
-      "AlternatePhoneNumbers": "9803980398,9843984398",
-      "HighestLevelOfEducation": "Bachelor's Degree",
-      "GraduatedOn": "2014-06-30",
-      "ReferredBy": "Someone",
-      "ApplicantNotes": "Highly motivated and experienced candidate",
-      "CVUrl": "https://cv.com/rambahadurthapa_cb.pdf",
-      "ProfilePictureUrl": "https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg",
-      "IsBlacklisted": true,
-      "BlacklistedReason": "Test",
-      "IsShortlisted": false,
-      "ExperienceInMonthsWithCompanyName": "36, SB Tech Pvt. Ltd",
-      "RegisteredOn": "2023-07-29",
-      "ExpectedSalary": 40000,
-      "JobDomains": [
-        1,
-        2
-      ]
-    },
-    {
-      "id": 2,
-      "FirstName": "Kam",
-      "MiddleName": "Bahadur",
-      "LastName": "Thapa",
-      "DOB": "1990-06-19",
-      "PrimaryEmail": "kambahadurthapa@gmail.com",
-      "PrimaryPhoneNumber": "9814981498",
-      "AlternateEmails": "kambahadurthapa2@example.com,kambahadurthapa3@example.com",
-      "AlternatePhoneNumbers": "9830983098,9834983498",
-      "HighestLevelOfEducation": "Bachelor's Degree",
-      "GraduatedOn": "2013-08-30",
-      "ReferredBy": "Another Someone",
-      "ApplicantNotes": "Highly motivated and experienced candidate",
-      "CVUrl": "https://cv.com/kambahadurthapa_cb.pdf",
-      "ProfilePictureUrl": "https://pp.com/kambahadurthapa_pp.jpg",
-      "IsBlacklisted": false,
-      "BlacklistedReason": "",
-      "IsShortlisted": true,
-      "ExperienceInMonthsWithCompanyName": "36,  Microsoft",
-      "RegisteredOn": "2023-07-29",
-      "ExpectedSalary": 75000,
-      "JobDomains": [
-        1,
-        2
-      ]
-    },
-    {
-      "id": 3,
-      "FirstName": "Nam",
-      "MiddleName": "Bahadur",
-      "LastName": "Thapa",
-      "DOB": "1991-04-18",
-      "PrimaryEmail": "nambahadurthapa@gmail.com",
-      "PrimaryPhoneNumber": "9845984598",
-      "AlternateEmails": "nambahadurthapa2@example.com,nambahadurthapa3@example.com",
-      "AlternatePhoneNumbers": "9830989898,98349838798",
-      "HighestLevelOfEducation": "Bachelor's Degree",
-      "GraduatedOn": "2014-06-30",
-      "ReferredBy": "Someone else",
-      "ApplicantNotes": "Highly motivated and experienced candidate",
-      "CVUrl": "https://cv.com/nambahadurthapa_cb.pdf",
-      "ProfilePictureUrl": "https://pp.com/nambahadurthapa_pp.jpg",
-      "IsBlacklisted": false,
-      "BlacklistedReason": "",
-      "IsShortlisted": false,
-      "ExperienceInMonthsWithCompanyName": "36,  Microsoft",
-      "RegisteredOn": "2023-07-29",
-      "ExpectedSalary": 75000,
-      "JobDomains": [
-        1,
-        2
-      ]
-    }
-  ],
-  "Candidates": [
-    {
-      "ApplicantsId": 2,
-      "CandidateStatus": "Second Interview",
-      "Remarks": "Passed First",
-      "id": 1
-    }
-  ],
-  "JobApplications": [
-    {
-      "id": 1,
-      "JobPostingsId": 1,
-      "ApplicantsId": 1,
-      "ApplicationDate": "2023-07-29",
-      "JobApplicationStatus": ""
-    },
-    {
-      "id": 2,
-      "JobPostingsId": 1,
-      "ApplicantsId": 2,
-      "ApplicationDate": "2023-07-29",
-      "JobApplicationStatus": "Hired",
-      "NegotiatedSalary": 65000,
-      "HiredOn": "2023-08-16"
-    },
-    {
-      "id": 3,
-      "JobPostingsId": 1,
-      "ApplicantsId": 3,
-      "ApplicationDate": "2023-07-29",
-      "JobApplicationStatus": "Hired",
-      "NegotiatedSalary": 45000,
-      "HiredOn": "2023-08-15"
-    }
-  ],
-  "Interviews": [
-    {
-      "InterviewType": "Technical Assessment",
-      "CandidatesId": 1,
-      "Title": "Dot Net Interview",
-      "InterviewersId": 5,
-      "date": "2023-08-11T18:48",
-      "id": 2
-    },
-    {
-      "InterviewType": "Negotiation Round",
-      "CandidatesId": 1,
-      "Title": "Dot Net Interview",
-      "InterviewersId": 5,
-      "date": "2023-08-07T18:56",
-      "id": 4
-    },
-    {
-      "InterviewType": "Technical Assessment",
-      "CandidatesId": 1,
-      "Title": "React Interview",
-      "InterviewersId": 1,
-      "date": "2023-08-16T12:03",
-      "id": 6
-    },
-    {
-      "InterviewType": "Technical Assessment",
-      "CandidatesId": 1,
-      "Title": "QA Interview",
-      "InterviewersId": 5,
-      "date": "2023-08-17T22:07",
-      "id": 7
-    },
-    {
-      "InterviewType": "Technical Assessment",
-      "CandidatesId": 1,
-      "Title": "React Interview",
-      "InterviewersId": 5,
-      "date": "2023-08-08T06:51",
-      "id": 8
-    },
-    {
-      "InterviewType": "Negotiation Round",
-      "CandidatesId": 1,
-      "Title": "QA Interview",
-      "InterviewersId": 1,
-      "date": "2023-08-15T06:58",
-      "id": 9
-    }
-  ],
-  "InterviewDetails": [],
-  "Interviewers": [
-    {
-      "id": 1,
-      "Name": "Ram Shrestha",
-      "Email": "ramshrestha20@gmail.com",
-      "Phone": "9841987293"
-    },
-    {
-      "id": 2,
-      "Name": "Jayanti Sharma",
-      "Email": "jntyshrma@gmail.com",
-      "Phone": "9801298374"
-    },
-    {
-      "id": 3,
-      "Name": "Gaurab Karki",
-      "Email": "gaurabkarki90@gmail.com",
-      "Phone": "9813125874"
-    },
-    {
-      "id": 4,
-      "Name": "Kanchan Shrestha",
-      "Email": "kanchanshrestha3@gmail.com",
-      "Phone": "9843766464"
-    },
-    {
-      "id": 5,
-      "Name": "Nischal Bade",
-      "Email": "nischalbade100@gmail.com",
-      "Phone": "9813342334"
-    }
-  ],
-  "InterviewersJobDomains": [],
-  "JobApplicationInterviewers": [],
-  "JobApplicationStatusChangeLogs": [],
-  "Assesments": [],
-  "OfferLetter": [],
-  "LetterTemplates": []
+    "JobLevels": [
+        {
+            "id": 1,
+            "Name": "Associate"
+        },
+        {
+            "id": 2,
+            "Name": "Mid"
+        },
+        {
+            "id": 3,
+            "Name": "Senior"
+        }
+    ],
+    "JobDomains": [
+        {
+            "id": 1,
+            "Name": "DotNet"
+        },
+        {
+            "id": 2,
+            "Name": "React"
+        },
+        {
+            "id": 3,
+            "Name": "QA"
+        },
+        {
+            "id": 4,
+            "Name": "Support"
+        },
+        {
+            "id": 5,
+            "Name": "HR"
+        }
+    ],
+    "JobPositions": [
+        {
+            "id": 1,
+            "Name": "Associate DotNet Engineer",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 1,
+            "JobLevelId": 1
+        },
+        {
+            "id": 2,
+            "Name": "Mid DotNet Engineer",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 1,
+            "JobLevelId": 2
+        },
+        {
+            "id": 3,
+            "Name": "Senior DotNet Engineer",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 1,
+            "JobLevelId": 3
+        },
+        {
+            "id": 4,
+            "Name": "Associate React Engineer",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 2,
+            "JobLevelId": 1
+        },
+        {
+            "id": 5,
+            "Name": "Mid React Engineer",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 2,
+            "JobLevelId": 2
+        },
+        {
+            "id": 6,
+            "Name": "Senior React Engineer",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 2,
+            "JobLevelId": 3
+        },
+        {
+            "id": 7,
+            "Name": "Associate QA",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 3,
+            "JobLevelId": 1
+        },
+        {
+            "id": 8,
+            "Name": "Mid QA",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 3,
+            "JobLevelId": 2
+        },
+        {
+            "id": 9,
+            "Name": "Senior QA",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 3,
+            "JobLevelId": 3
+        },
+        {
+            "id": 10,
+            "Name": "Associate Support",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 4,
+            "JobLevelId": 1
+        },
+        {
+            "id": 11,
+            "Name": "Mid Support",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 4,
+            "JobLevelId": 2
+        },
+        {
+            "id": 12,
+            "Name": "Senior Support",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 4,
+            "JobLevelId": 3
+        },
+        {
+            "id": 13,
+            "Name": "Associate HR",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 5,
+            "JobLevelId": 1
+        },
+        {
+            "id": 14,
+            "Name": "Mid HR",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 5,
+            "JobLevelId": 2
+        },
+        {
+            "id": 15,
+            "Name": "Senior HR",
+            "JobDescriptionUrl": "example@description.com",
+            "IsActive": true,
+            "JobDomainId": 5,
+            "JobLevelId": 3
+        }
+    ],
+    "JobApplicatonStatusId": [
+        {
+            "id": 1,
+            "Name": "Acitve"
+        },
+        {
+            "id": 2,
+            "Name": "Inactive"
+        }
+    ],
+    "JobPostings": [
+        {
+            "JobPositionsId": 7,
+            "NumberOfOpenings": 8,
+            "PublishedOn": "2023-07-29T06:40:10.471Z",
+            "ApplicationFromDate": "2023-07-31",
+            "ApplicationExpiryDate": "2023-08-04",
+            "JobApplicationStatusId": 1,
+            "JobPositionId": 8,
+            "id": 1
+        },
+        {
+            "JobPositionsId": 1,
+            "NumberOfOpenings": 5,
+            "PublishedOn": "2023-08-07T08:53:26.038Z",
+            "ApplicationFromDate": "2023-08-10",
+            "ApplicationExpiryDate": "2023-08-30",
+            "JobApplicationStatusId": 1,
+            "JobPositionId": 8,
+            "id": 2
+        }
+    ],
+    "Applicants": [
+        {
+            "id": 1,
+            "FirstName": "Ram",
+            "MiddleName": "Bahadur",
+            "LastName": "Thapa",
+            "DOB": "1990-05-15",
+            "PrimaryEmail": "rambahadurthapa@gmail.com",
+            "PrimaryPhoneNumber": "9841984198",
+            "AlternateEmails": "rambahadurthapa2@example.com,rambahadurthapa3@example.com",
+            "AlternatePhoneNumbers": "9803980398,9843984398",
+            "HighestLevelOfEducation": "Bachelor's Degree",
+            "GraduatedOn": "2014-06-30",
+            "ReferredBy": "Someone",
+            "ApplicantNotes": "Highly motivated and experienced candidate",
+            "CVUrl": "https://cv.com/rambahadurthapa_cb.pdf",
+            "ProfilePictureUrl": "https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg",
+            "IsBlacklisted": true,
+            "BlacklistedReason": "Test",
+            "IsShortlisted": false,
+            "ExperienceInMonthsWithCompanyName": "36, SB Tech Pvt. Ltd",
+            "RegisteredOn": "2023-07-29",
+            "ExpectedSalary": 40000,
+            "JobDomains": [1, 2]
+        },
+        {
+            "id": 2,
+            "FirstName": "Kam",
+            "MiddleName": "Bahadur",
+            "LastName": "Thapa",
+            "DOB": "1990-06-19",
+            "PrimaryEmail": "kambahadurthapa@gmail.com",
+            "PrimaryPhoneNumber": "9814981498",
+            "AlternateEmails": "kambahadurthapa2@example.com,kambahadurthapa3@example.com",
+            "AlternatePhoneNumbers": "9830983098,9834983498",
+            "HighestLevelOfEducation": "Bachelor's Degree",
+            "GraduatedOn": "2013-08-30",
+            "ReferredBy": "Another Someone",
+            "ApplicantNotes": "Highly motivated and experienced candidate",
+            "CVUrl": "https://cv.com/kambahadurthapa_cb.pdf",
+            "ProfilePictureUrl": "https://pp.com/kambahadurthapa_pp.jpg",
+            "IsBlacklisted": false,
+            "BlacklistedReason": "",
+            "IsShortlisted": true,
+            "ExperienceInMonthsWithCompanyName": "36,  Microsoft",
+            "RegisteredOn": "2023-07-29",
+            "ExpectedSalary": 75000,
+            "JobDomains": [1, 2]
+        },
+        {
+            "id": 3,
+            "FirstName": "Nam",
+            "MiddleName": "Bahadur",
+            "LastName": "Thapa",
+            "DOB": "1991-04-18",
+            "PrimaryEmail": "nambahadurthapa@gmail.com",
+            "PrimaryPhoneNumber": "9845984598",
+            "AlternateEmails": "nambahadurthapa2@example.com,nambahadurthapa3@example.com",
+            "AlternatePhoneNumbers": "9830989898,98349838798",
+            "HighestLevelOfEducation": "Bachelor's Degree",
+            "GraduatedOn": "2014-06-30",
+            "ReferredBy": "Someone else",
+            "ApplicantNotes": "Highly motivated and experienced candidate",
+            "CVUrl": "https://cv.com/nambahadurthapa_cb.pdf",
+            "ProfilePictureUrl": "https://pp.com/nambahadurthapa_pp.jpg",
+            "IsBlacklisted": false,
+            "BlacklistedReason": "",
+            "IsShortlisted": false,
+            "ExperienceInMonthsWithCompanyName": "36,  Microsoft",
+            "RegisteredOn": "2023-07-29",
+            "ExpectedSalary": 75000,
+            "JobDomains": [1, 2]
+        }
+    ],
+    "Candidates": [
+        {
+            "ApplicantsId": 2,
+            "CandidateStatus": "Second Interview",
+            "Remarks": "Passed First",
+            "id": 1
+        }
+    ],
+    "JobApplications": [
+        {
+            "id": 1,
+            "JobPostingsId": 1,
+            "ApplicantsId": 1,
+            "ApplicationDate": "2023-07-29",
+            "JobApplicationStatus": ""
+        },
+        {
+            "id": 2,
+            "JobPostingsId": 1,
+            "ApplicantsId": 2,
+            "ApplicationDate": "2023-07-29",
+            "JobApplicationStatus": "Hired",
+            "NegotiatedSalary": 65000,
+            "HiredOn": "2023-08-16"
+        },
+        {
+            "id": 3,
+            "JobPostingsId": 1,
+            "ApplicantsId": 3,
+            "ApplicationDate": "2023-07-29",
+            "JobApplicationStatus": "Hired",
+            "NegotiatedSalary": 45000,
+            "HiredOn": "2023-08-15"
+        }
+    ],
+    "Interviews": [
+        {
+            "InterviewType": "Technical Assessment",
+            "CandidatesId": 1,
+            "Title": "Dot Net Interview",
+            "InterviewersId": 5,
+            "date": "2023-08-11T18:48",
+            "id": 2
+        },
+        {
+            "InterviewType": "Negotiation Round",
+            "CandidatesId": 1,
+            "Title": "Dot Net Interview",
+            "InterviewersId": 5,
+            "date": "2023-08-07T18:56",
+            "id": 4
+        },
+        {
+            "InterviewType": "Technical Assessment",
+            "CandidatesId": 1,
+            "Title": "React Interview",
+            "InterviewersId": 1,
+            "date": "2023-08-16T12:03",
+            "id": 6
+        },
+        {
+            "InterviewType": "Technical Assessment",
+            "CandidatesId": 1,
+            "Title": "QA Interview",
+            "InterviewersId": 5,
+            "date": "2023-08-17T22:07",
+            "id": 7
+        },
+        {
+            "InterviewType": "Technical Assessment",
+            "CandidatesId": 1,
+            "Title": "React Interview",
+            "InterviewersId": 5,
+            "date": "2023-08-08T06:51",
+            "id": 8
+        },
+        {
+            "InterviewType": "Negotiation Round",
+            "CandidatesId": 1,
+            "Title": "QA Interview",
+            "InterviewersId": 1,
+            "date": "2023-08-15T06:58",
+            "id": 9
+        }
+    ],
+    "InterviewDetails": [],
+    "Interviewers": [
+        {
+            "id": 1,
+            "Name": "Ram Shrestha",
+            "Email": "ramshrestha20@gmail.com",
+            "Phone": "9841987293"
+        },
+        {
+            "id": 2,
+            "Name": "Jayanti Sharma",
+            "Email": "jntyshrma@gmail.com",
+            "Phone": "9801298374"
+        },
+        {
+            "id": 3,
+            "Name": "Gaurab Karki",
+            "Email": "gaurabkarki90@gmail.com",
+            "Phone": "9813125874"
+        },
+        {
+            "id": 4,
+            "Name": "Kanchan Shrestha",
+            "Email": "kanchanshrestha3@gmail.com",
+            "Phone": "9843766464"
+        },
+        {
+            "id": 5,
+            "Name": "Nischal Bade",
+            "Email": "nischalbade100@gmail.com",
+            "Phone": "9813342334"
+        }
+    ],
+    "InterviewersJobDomains": [],
+    "JobApplicationInterviewers": [],
+    "JobApplicationStatusChangeLogs": [],
+    "Assesments": [],
+    "OfferLetter": [],
+    "LetterTemplates": [
+        { "id": 1, "LetterType": "Rejection Mail", "Template": "" },
+        { "id": 2, "LetterType": "Offer Letter", "Template": "" }
+    ]
 }
