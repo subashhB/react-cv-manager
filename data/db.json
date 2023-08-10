@@ -387,7 +387,11 @@
     "Assesments": [],
     "OfferLetter": [],
     "LetterTemplates": [
-        { "id": 1, "LetterType": "Rejection Mail", "Template": "" },
+        {
+            "id": 1,
+            "LetterType": "Rejection Mail",
+            "Template": "<i>This is rejection mail.</i>"
+        },
         { "id": 2, "LetterType": "Offer Letter", "Template": "" }
     ]
 }

@@ -1,17 +1,46 @@
-import React, { useRef, useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
+import axios from "axios";
 import JoditEditor from "jodit-react";
+import React, { useEffect, useRef, useState } from "react";
 
-const TemplateEditor = () => {
+const TemplateEditor = ({ id }) => {
     const editorRef = useRef();
     const [content, setContent] = useState("");
+    const [template, setTemplate] = useState(null);
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:3001/LetterTemplates/${id}`)
+            .then((response) => {
+                setTemplate(response.data);
+                setContent(response.data.Template);
+            });
+    }, [id]);
+    const handleSaveTemplate = () => {
+        console.log("handleSaveTemplate");
+    };
+    console.log(id);
+    console.log(template);
     return (
-        <div>
-            <JoditEditor
-                ref={editorRef}
-                value={content}
-                onChange={(newContent) => setContent(newContent)}
-            />
-            <template>{content}</template>
+        <div className="m-4">
+            {template && (
+                <>
+                    <Typography variant="h5" sx={{ marginBottom: 3 }}>
+                        {template.LetterType} Template
+                    </Typography>
+                    <JoditEditor
+                        ref={editorRef}
+                        value={content}
+                        onChange={(newContent) => setContent(newContent)}
+                    />
+                    <template>{content}</template>
+                    <Box className="flex justify-end w-full my-3">
+                        <Button onClick={() => handleSaveTemplate()}>
+                            Save {template.LetterType} Template
+                        </Button>
+                    </Box>
+                </>
+            )}
         </div>
     );
 };
