@@ -16,6 +16,8 @@ import ShortListPage from "./pages/Applicants/ShortListPage";
 import JobApplicationPage from "./pages/Applicants/JobApplicationPage";
 import TemplateEditorPage from "./pages/Template/TemplateEditorPage";
 import TemplateListPage from "./pages/Template/TemplateListPage";
+import SelectionPage from "./pages/OfferLetter/SelectionPage";
+import LetterPreviewPage from "./pages/OfferLetter/LetterPreviewPage";
 
 function App() {
     return (
@@ -48,7 +50,10 @@ function App() {
                         path="/assessmentTest"
                         element={<AssessmentTestPage />}
                     />
-                    <Route path="/offerLetter" element={<OfferLetterPage />} />
+                    <Route path="/offerLetter" element={<OfferLetterPage />}>
+                        <Route index element={<SelectionPage />} />
+                        <Route path="preview" element={<LetterPreviewPage />} />
+                    </Route>
                 </Route>
             </Routes>
         </div>
