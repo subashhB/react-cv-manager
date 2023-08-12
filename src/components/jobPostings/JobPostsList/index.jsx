@@ -27,7 +27,7 @@ const JobPostsList = ({ handleDelete, jobPostList, passJobToFormForEdit }) => {
                 {jobPostList?.map((jobPost, i) => (
                     <tr className="tr" key={jobPost.id}>
                         <td className="td">{i + 1}</td>
-                        <td className="td">{jobPost.JobPosition.Name}</td>
+                        <td className="td">{jobPost.JobPositions.Name}</td>
                         <td className="td">{jobPost.NumberOfOpenings}</td>
                         <td className="td">{jobPost.PublishedOn}</td>
                         <td className="td">{jobPost.ApplicationFromDate}</td>

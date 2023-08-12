@@ -23,7 +23,7 @@ const JobPostingPage = () => {
                             ? item
                             : {
                                   ...response.data,
-                                  JobPosition: selectedJobPosition,
+                                  JobPositions: selectedJobPosition,
                               }
                     )
                 );
@@ -36,7 +36,7 @@ const JobPostingPage = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3001/JobPostings?_expand=JobPosition")
+            .get("http://localhost:3001/JobPostings?_expand=JobPositions")
             .then((response) => {
                 setJobPostList(response.data);
             })

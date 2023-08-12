@@ -61,7 +61,7 @@ const JobPostingForm = ({
                     onChange={(e) =>
                         setJobPost({
                             ...jobPost,
-                            JobPositionId: parseInt(e.target.value),
+                            JobPositionsId: parseInt(e.target.value),
                         })
                     }
                     required

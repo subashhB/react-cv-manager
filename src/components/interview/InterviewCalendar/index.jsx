@@ -3,6 +3,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import { IoTrashOutline } from "react-icons/io5";
 import {
     Box,
     Button,
@@ -462,7 +463,8 @@ const InterviewCalendar = ({
                                 handleEventClicked(eventInfo);
                             }}
                         >
-                            Delete Interview
+                            <IoTrashOutline size={18} />
+                            <span className="ms-1">Delete Interview</span>
                         </Button>
                     </Box>
                 </Box>
