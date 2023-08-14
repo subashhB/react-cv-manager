@@ -74,12 +74,14 @@ const SelectionComponent = ({ applications }) => {
             (dpt) => dpt.id === post.JobPositions.JobDomainId
         ).Name;
         const negotiatedSalary = application.NegotiatedSalary;
+        const email = application.Applicants.PrimaryEmail;
         const letterFields = {
             date: letterDate,
             applicantName,
             jobTitle,
             department,
             negotiatedSalary,
+            email,
         };
 
         console.log(letterFields);

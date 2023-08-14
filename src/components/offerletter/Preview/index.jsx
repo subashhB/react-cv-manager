@@ -23,8 +23,6 @@ const Preview = () => {
                         hrTitle: "Talent Acquisition and Outreach Specialist",
                     };
                     const template = response.data?.Template;
-                    console.log(letterFields);
-                    console.log("Template", template);
                     const offerLetter = template
                         .replace("{date}", letterFields.date)
                         .replace("{applicantName}", letterFields.applicantName)
@@ -45,7 +43,7 @@ const Preview = () => {
     }
 
     const handleSendOfferLetter = () => {
-        console.log("Offer Letter sent");
+        console.log(`Offer Letter sent to ${letterFields.email}`);
     };
     return (
         <div>
@@ -55,6 +53,7 @@ const Preview = () => {
                         Preview
                     </Typography>
                     <JoditEditor
+                        config={{ readonly: true, toolbar: false }}
                         ref={editorRef}
                         value={content}
                         onChange={(newContent) => setContent(newContent)}
