@@ -8,6 +8,7 @@ const Preview = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [content, setContent] = useState("");
+    const [letterType, setLetterType] = useState("");
     const editorRef = useRef(null);
     const letterFields = location.state?.letterFields;
 
@@ -34,6 +35,7 @@ const Preview = () => {
                         )
                         .replace("{HR Name}", hrDetails.hrName)
                         .replace("{HR Title}", hrDetails.hrTitle);
+                    setLetterType(response.data?.LetterType);
                     setContent(offerLetter);
                 });
         }
@@ -43,7 +45,22 @@ const Preview = () => {
     }
 
     const handleSendOfferLetter = () => {
-        console.log(`Offer Letter sent to ${letterFields.email}`);
+        const letter = {
+            Title: `${letterType} to ${letterFields.applicantName}`,
+            Letter: content,
+            Status: "Sent",
+        };
+        axios.post("http://localhost:3001/OfferLetters", letter);
+        navigate("/offerletter");
+    };
+    const handleDraft = () => {
+        const letter = {
+            Title: `${letterType} to ${letterFields.applicantName}`,
+            Letter: content,
+            Status: "Draft",
+        };
+        axios.post("http://localhost:3001/OfferLetters", letter);
+        navigate("/offerletter");
     };
     return (
         <div>
@@ -59,9 +76,15 @@ const Preview = () => {
                         onChange={(newContent) => setContent(newContent)}
                     />
                     <template>{content}</template>
-                    <Box className="flex justify-end w-full my-3">
-                        <Button onClick={() => handleSendOfferLetter()}>
-                            Send FOffer Letter
+                    <Box className="flex justify-end w-full my-3 gap-2">
+                        <Button onClick={() => handleDraft()}>
+                            Save as Draft
+                        </Button>
+                        <Button
+                            color="secondary"
+                            onClick={() => handleSendOfferLetter()}
+                        >
+                            Send Offer Letter
                         </Button>
                     </Box>
                 </>

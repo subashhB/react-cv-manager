@@ -376,7 +376,26 @@
   "JobApplicationInterviewers": [],
   "JobApplicationStatusChangeLogs": [],
   "Assesments": [],
-  "OfferLetter": [],
+  "OfferLetters": [
+    {
+      "id": 1,
+      "Title": "Test Letter",
+      "Letter": "This is Test Draft Letter",
+      "Status": "Draft"
+    },
+    {
+      "id": 2,
+      "Title": "Test Letter",
+      "Letter": "This is Test Sent Letter",
+      "Status": "Sent"
+    },
+    {
+      "Title": "Offer Letter to Kam Bahadur Thapa",
+      "Letter": "<p>16th August, 2023</p><p><br></p><p>Dear Kam Bahadur Thapa,<br><br>We are pleased to extend an offer of employment for the position of Associate DotNet Engineer at Amnil Technologies Pvt Ltd. After careful consideration of your qualifications and experience, we are confident that you will be a valuable addition to our team.<br><br>Position: Associate DotNet Engineer<br>Department: DotNet<br>Location: Dhobighat, Lalitpur<br>Renumeration: 65000<br><br>We believe in fostering a collaborative and inclusive work environment that encourages innovation and growth. As a member of our team, you will have the opportunity to contribute to meaningful projects and develop your skills.<br><br>Please review the enclosed Employment Agreement for further details regarding your compensation, benefits, and terms of employment. If you have any questions or require clarification, please do not hesitate to contact our Human Resources department.<br><br>To formally accept this offer, please sign and return a copy of this letter along with the enclosed Employment Agreement within this week.<br><br>We look forward to welcoming you to Amnil Technologies and are excited about the contributions you will bring to our organization. We are confident that you will find it to be a rewarding and supportive place to work.<br><br>Sincerely,<br><br>Riju Shrestha<br><strong>Talent Acquisition and Outreach Specialist</strong></p><p><br><strong>Amnil Technologies Pvt. Ltd.</strong></p><p><em>Jhamsikhel, Lalitpur</em><br></p>",
+      "Status": "Draft",
+      "id": 3
+    }
+  ],
   "LetterTemplates": [
     {
       "id": 1,
@@ -386,7 +405,7 @@
     {
       "id": 2,
       "LetterType": "Offer Letter",
-      "Template": "<p>{date}</p><p><br></p><p>Dear {applicantName},<br><br>We are pleased to extend an offer of employment for the position of {jobTitle} at Amnil Technologies Pvt Ltd. After careful consideration of your qualifications and experience, we are confident that you will be a valuable addition to our team.<br><br>Position: {jobTitle}<br>Department: {department}<br>Location: Dhobighat, Lalitpur<br>Renumeration: {negotiatedSalary}<br><br>We believe in fostering a collaborative and inclusive work environment that encourages innovation and growth. As a member of our team, you will have the opportunity to contribute to meaningful projects and develop your skills.<br><br>Please review the enclosed Employment Agreement for further details regarding your compensation, benefits, and terms of employment. If you have any questions or require clarification, please do not hesitate to contact our Human Resources department.<br><br>To formally accept this offer, please sign and return a copy of this letter along with the enclosed Employment Agreement within this week.<br><br>We look forward to welcoming you to Amnil Technologies and are excited about the contributions you will bring to our organization. We are confident that you will find it to be a rewarding and supportive place to work.<br><br>Sincerely,<br><br>{HR Name}<br>{HR Title}</p><p><br><strong>Amnil Technologies Pvt. Ltd.</strong></p><p><em>Jhamsikhel, Lalitpur</em><br></p>"
+      "Template": "<p>{date}</p><p><br></p><p>Dear {applicantName},<br><br>We are pleased to extend an offer of employment for the position of {jobTitle} at Amnil Technologies Pvt Ltd. After careful consideration of your qualifications and experience, we are confident that you will be a valuable addition to our team.<br><br>Position: {jobTitle}<br>Department: {department}<br>Location: Dhobighat, Lalitpur<br>Renumeration: {negotiatedSalary}<br><br>We believe in fostering a collaborative and inclusive work environment that encourages innovation and growth. As a member of our team, you will have the opportunity to contribute to meaningful projects and develop your skills.<br><br>Please review the enclosed Employment Agreement for further details regarding your compensation, benefits, and terms of employment. If you have any questions or require clarification, please do not hesitate to contact our Human Resources department.<br><br>To formally accept this offer, please sign and return a copy of this letter along with the enclosed Employment Agreement within this week.<br><br>We look forward to welcoming you to Amnil Technologies and are excited about the contributions you will bring to our organization. We are confident that you will find it to be a rewarding and supportive place to work.<br><br>Sincerely,<br><br>{HR Name}<br><strong>{HR Title}</strong></p><p><br><strong>Amnil Technologies Pvt. Ltd.</strong></p><p><em>Jhamsikhel, Lalitpur</em><br></p>"
     }
   ]
 }

@@ -18,6 +18,7 @@ import TemplateEditorPage from "./pages/Template/TemplateEditorPage";
 import TemplateListPage from "./pages/Template/TemplateListPage";
 import SelectionPage from "./pages/OfferLetter/SelectionPage";
 import LetterPreviewPage from "./pages/OfferLetter/LetterPreviewPage";
+import LetterListPage from "./pages/OfferLetter/LetterListPage";
 
 function App() {
     return (
@@ -51,7 +52,8 @@ function App() {
                         element={<AssessmentTestPage />}
                     />
                     <Route path="/offerLetter" element={<OfferLetterPage />}>
-                        <Route index element={<SelectionPage />} />
+                        <Route index element={<LetterListPage />} />
+                        <Route path="create" element={<SelectionPage />} />
                         <Route path="preview" element={<LetterPreviewPage />} />
                     </Route>
                 </Route>
