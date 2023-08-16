@@ -19,6 +19,7 @@ import TemplateListPage from "./pages/Template/TemplateListPage";
 import SelectionPage from "./pages/OfferLetter/SelectionPage";
 import LetterPreviewPage from "./pages/OfferLetter/LetterPreviewPage";
 import LetterListPage from "./pages/OfferLetter/LetterListPage";
+import LetterPage from "./pages/OfferLetter/LetterPage";
 
 function App() {
     return (
@@ -55,6 +56,7 @@ function App() {
                         <Route index element={<LetterListPage />} />
                         <Route path="create" element={<SelectionPage />} />
                         <Route path="preview" element={<LetterPreviewPage />} />
+                        <Route path="letter/:id" element={<LetterPage />} />
                     </Route>
                 </Route>
             </Routes>
