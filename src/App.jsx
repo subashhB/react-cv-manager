@@ -56,7 +56,7 @@ function App() {
                         <Route index element={<LetterListPage />} />
                         <Route path="create" element={<SelectionPage />} />
                         <Route path="preview" element={<LetterPreviewPage />} />
-                        <Route path="letter/:id" element={<LetterPage />} />
+                        <Route path=":id" element={<LetterPage />} />
                     </Route>
                 </Route>
             </Routes>

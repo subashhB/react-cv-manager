@@ -49,6 +49,7 @@ const Preview = () => {
             Title: `${letterType} to ${letterFields.applicantName}`,
             Letter: content,
             Status: "Sent",
+            Email: letterFields.email,
         };
         axios.post("http://localhost:3001/OfferLetters", letter);
         navigate("/offerletter");
@@ -58,6 +59,7 @@ const Preview = () => {
             Title: `${letterType} to ${letterFields.applicantName}`,
             Letter: content,
             Status: "Draft",
+            Email: letterFields.email,
         };
         axios.post("http://localhost:3001/OfferLetters", letter);
         navigate("/offerletter");

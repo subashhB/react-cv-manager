@@ -14,7 +14,7 @@ const LetterListPage = () => {
 
     return (
         <div>
-            <LetterList letters={letters} />
+            <LetterList letters={letters} setLetters={setLetters} />
         </div>
     );
 };
