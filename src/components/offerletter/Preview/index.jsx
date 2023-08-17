@@ -69,10 +69,9 @@ const Preview = () => {
             {letterFields && (
                 <>
                     <Typography variant="h5" sx={{ marginBottom: 3 }}>
-                        Preview
+                        Offer Letter
                     </Typography>
                     <JoditEditor
-                        config={{ readonly: true, toolbar: false }}
                         ref={editorRef}
                         value={content}
                         onChange={(newContent) => setContent(newContent)}

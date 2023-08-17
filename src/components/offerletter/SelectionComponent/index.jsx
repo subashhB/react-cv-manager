@@ -129,7 +129,7 @@ const SelectionComponent = ({ applications }) => {
                         }}
                         disabled={application === ""}
                     >
-                        Preview
+                        Create
                     </Button>
                 </Box>
             </Box>
