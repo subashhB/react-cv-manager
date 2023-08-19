@@ -16,28 +16,22 @@ const Preview = () => {
         if (!letterFields) {
             navigate("/offerletter");
         } else {
-            axios
-                .get("http://localhost:3001/LetterTemplates/2")
-                .then((response) => {
-                    const hrDetails = {
-                        hrName: "Riju Shrestha",
-                        hrTitle: "Talent Acquisition and Outreach Specialist",
-                    };
-                    const template = response.data?.Template;
-                    const offerLetter = template
-                        .replace("{date}", letterFields.date)
-                        .replace("{applicantName}", letterFields.applicantName)
-                        .replaceAll("{jobTitle}", letterFields.jobTitle)
-                        .replace("{department}", letterFields.department)
-                        .replace(
-                            "{negotiatedSalary}",
-                            letterFields.negotiatedSalary
-                        )
-                        .replace("{HR Name}", hrDetails.hrName)
-                        .replace("{HR Title}", hrDetails.hrTitle);
-                    setLetterType(response.data?.LetterType);
-                    setContent(offerLetter);
-                });
+            const { letter } = letterFields;
+            const hrDetails = {
+                hrName: "Riju Shrestha",
+                hrTitle: "Talent Acquisition and Outreach Specialist",
+            };
+            const template = letter.Template;
+            const offerLetter = template
+                .replace("{date}", letterFields.date)
+                .replace("{applicantName}", letterFields.applicantName)
+                .replaceAll("{jobTitle}", letterFields.jobTitle)
+                .replace("{department}", letterFields.department)
+                .replace("{negotiatedSalary}", letterFields.negotiatedSalary)
+                .replace("{HR Name}", hrDetails.hrName)
+                .replace("{HR Title}", hrDetails.hrTitle);
+            setLetterType(letter.LetterType);
+            setContent(offerLetter);
         }
     }, [navigate, letterFields]);
     if (!letterFields) {

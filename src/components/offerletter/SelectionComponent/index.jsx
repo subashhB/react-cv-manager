@@ -16,6 +16,8 @@ const SelectionComponent = ({ applications }) => {
     const [post, setPost] = useState(null);
     const [jobPostings, setJobPostings] = useState([]);
     const [departments, setDepartments] = useState([]);
+    const [letterTemplates, setLetterTemplates] = useState([]);
+    const [letter, setLetter] = useState("");
 
     const navigate = useNavigate();
 
@@ -26,6 +28,9 @@ const SelectionComponent = ({ applications }) => {
         axios
             .get("http://localhost:3001/JobDomains")
             .then((response) => setDepartments(response.data));
+        axios
+            .get("http://localhost:3001/LetterTemplates")
+            .then((response) => setLetterTemplates(response.data));
     }, []);
 
     const formatDate = (date) => {
@@ -82,6 +87,7 @@ const SelectionComponent = ({ applications }) => {
             department,
             negotiatedSalary,
             email,
+            letter,
         };
 
         console.log(letterFields);
@@ -89,7 +95,7 @@ const SelectionComponent = ({ applications }) => {
     };
     return (
         <Box className="w-full flex justify-center">
-            <Box className="w-1/2 my-4">
+            <Box className="w-1/2 my-4 ">
                 <Box>
                     <FormControl fullWidth>
                         <InputLabel id="select-application">
@@ -117,6 +123,26 @@ const SelectionComponent = ({ applications }) => {
                     </FormControl>
                 </Box>
                 <Box className="my-4">
+                    <FormControl fullWidth>
+                        <InputLabel id="select-template">Templates</InputLabel>
+                        <Select
+                            labelId="select-template"
+                            id="select-template"
+                            value={letter}
+                            onChange={(e) => setLetter(e.target.value)}
+                        >
+                            <MenuItem value={""} disabled>
+                                Select a Template
+                            </MenuItem>
+                            {letterTemplates?.map((template) => (
+                                <MenuItem value={template} key={template.id}>
+                                    {template.LetterType}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Box>
+                <Box className="my-4">
                     <Typography sx={{ color: "gray" }}>
                         <span className="font-bold">Job Position</span>:{" "}
                         {post?.JobPositions.Name}
@@ -127,7 +153,7 @@ const SelectionComponent = ({ applications }) => {
                         onClick={() => {
                             handlePreview();
                         }}
-                        disabled={application === ""}
+                        disabled={application === "" || letter === ""}
                     >
                         Create
                     </Button>
