@@ -28,9 +28,12 @@ const SelectionComponent = ({ applications }) => {
         axios
             .get("http://localhost:3001/JobDomains")
             .then((response) => setDepartments(response.data));
-        axios
-            .get("http://localhost:3001/LetterTemplates")
-            .then((response) => setLetterTemplates(response.data));
+        axios.get("http://localhost:3001/LetterTemplates").then((response) => {
+            const templates = response.data.filter(
+                (item) => item.LetterType !== "Rejection Mail"
+            );
+            setLetterTemplates(templates);
+        });
     }, []);
 
     const formatDate = (date) => {
